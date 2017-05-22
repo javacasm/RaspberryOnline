@@ -11,7 +11,7 @@
 
 * Introducción
   * Algo de Historia
-  * Proyectos donde se usa Raspberry
+  * Proyectos donde se usa Raspberry Pi
 * Características generales de la placa Raspberry Pi. Hardware
   * Arquitectura
   * Versiones
