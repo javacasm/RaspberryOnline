@@ -9,20 +9,23 @@
 
 ## Esquema del curso
 
-* Introducción
+* [1. Introducción](./Tema 1 - Qué es Raspberry.md)
   * Algo de Historia
   * Proyectos donde se usa Raspberry Pi
-* Características generales de la placa Raspberry Pi. Hardware
+* [2. Características generales de la placa Raspberry Pi. Hardware](./Tema 2 - Caracteristicas de Raspberry.md)
   * Arquitectura
   * Versiones
-* Primeros pasos con Raspberry Pi. Software
+* 3. [Instalación](./Tema 3 - Instalación de Raspberry.md)
   * Sistemas operativos disponibles
   * Instalación
+* 4. [Primeros pasos con Raspberry Pi](./Tema 4 - Uso de Raspberry.md)
   * Mantenimiento
-* Lenguajes de programación
+  * Usos
+* 5. [Programación en Raspberry Pi](./Tema 5 - Programación con Raspberry.md)
+  * Scratch
   * Utilizando comandos y scripts: introducción a la línea de comandos de Unix/Linux
   * Ejemplos en Python
-* Conexión con equipos electrónicos y Arduino
+* 6. [Conexión con equipos electrónicos y Arduino](./Tema 6 - Electronica con Raspberry.md)
   * Introducción a la electrónica
   * Encendiendo y apagando leds
   * Conectando con Arduino
