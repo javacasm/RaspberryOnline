@@ -21,7 +21,7 @@ documentclass:
 
 
 
-\today
+
 
 \end{center}
 
