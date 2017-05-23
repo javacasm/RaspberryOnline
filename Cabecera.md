@@ -20,12 +20,10 @@ documentclass:
  @javacasm
 
 
-
-
+\includegraphics{Licencia_CC}
 
 \end{center}
 
-\includegraphics{Licencia_CC}
 \vspace*{\fill}
 
 \frontmatter
