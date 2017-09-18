@@ -20,8 +20,6 @@ documentclass:
  @javacasm
 
 
-\includegraphics{Licencia_CC}
-
 \end{center}
 
 \vspace*{\fill}
