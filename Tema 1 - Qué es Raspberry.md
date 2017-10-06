@@ -7,6 +7,16 @@ Raspberry Pi se ha convertido, junto con Arduino, en uno de los máximos exponen
 
 Raspberry Pi se puede convertir fácilmente, por tanto, en un ordenador versátil utilizando cualquier teclado y ratón convencional USB. Además tiene un conector Ethernet para enchufarse a la red local y a Internet y una salida HDMI de vídeo. Por sus características y bajo precio, se ha convertido en una plataforma con muchísimo potencial que contribuye a desarrollar habilidades tecnológicas, promoviendo el aprendizaje de lenguajes de programación como Python, C o Perl, llevando el mundo de la programación a todo aquel que tenga interés en aprender, experimentar y realizar sus propios proyectos.
 
+### Esquema del curso
+
+A lo largo del curso veremos los siguientes temas
+
+- Introducción
+- Características generales de la placa Raspberry Pi. Hardware
+- Primeros pasos con Raspberry Pi. Software
+- Lenguaje de programación y entorno de desarrollo integrado
+- Conexión con equipos electrónicos y Arduino
+
 ### Objetivos del módulo
 
 * Familiarizarse con la plataforma Raspberry Pi, aprendiendo a instalar y a usarla para
@@ -15,14 +25,6 @@ diferentes fines.
 * Aprender a montar proyectos fáciles con electrónica que se puedan controlar desde la plataforma
 
 ![esquema](./images/esquema.png)
-
-### Esquema del módulo
-
-- Introducción
-- Características generales de la placa Raspberry Pi. Hardware
-- Primeros pasos con Raspberry Pi. Software
-- Lenguaje de programación y entorno de desarrollo integrado
-- Conexión con equipos electrónicos y Arduino
 
 
 ## Orígenes de Raspberry Pi
@@ -65,15 +67,16 @@ Puedes encontrar más detalles en la [página de la wikipedia]([Artículo de la 
 
 Una pregunta muy frecuente es si para determinado proyecto es mejor usar Arduino o Raspberry Pi.
 
-* Arduino es más robusto eléctricamente: si se produce un cortocircuito entre pines o se comente un error se apagará y reseteará pero las probabilidades de romperlo son bajas. En cambio si hacemos esto mismo con una Raspberry lo más seguro es que la dejemos inservible.
+Arduino es más robusto eléctricamente: si se produce un cortocircuito entre pines o se comente un error se apagará y reseteará pero las probabilidades de romperlo son bajas. En cambio si hacemos esto mismo con una Raspberry lo más seguro es que la dejemos inservible.
 
 Algunas ventajas de Arduino:
+
 * Es capaz de dar una mayor corriente por cada patilla (hasta 40mA) mientras que Raspberry Pi no puede dar más de 5mA
-* Dispone de entradas analógicas, es decir, es capaz de leer valores intermedios entre 0 y 5v, no solo digitales como Raspberry Pi
+* Dispone de entradas analógicas, es decir, es capaz de leer valores eléctricos intermedios entre 0 y 5v, no solo digitales como Raspberry Pi
 * La sencillez de su funcionamiento (como microcontrolador ) le aporta una gran robustez a la hora de soportar cortes de alimentación.
 * Últimamente están apareciendo diversas versiones de Arduino con mayor capacidad, soportando una programación más compleja y potente, como Yún o Galileo.
 
-* Raspberry Pi tiene una mayor capacidad de procesamiento, lo que la hace más adecuada para determinadas tareas, como reconocimiento de imágenes o cálculos complejos, algo que sería impensable para Arduino.
+Raspberry Pi tiene una mayor capacidad de procesamiento, lo que la hace más adecuada para determinadas tareas, como reconocimiento de imágenes o cálculos complejos, algo que sería impensable para Arduino.
 
   ![vs](./images/arduinovsRaspberry.png)
 
@@ -81,7 +84,7 @@ Algunas ventajas de Arduino:
 
 * Raspberry Pi es un entorno completo, no necesita de ningún dispositivo externo para programarse
 
-* ¿Son incompatibles? en absoluto lo más frecuente y es usarlas conjuntamente, conectándolos y haciendo que la Raspberry actúe como cerebro y Arduino como ejecutor.
+¿Son incompatibles? en absoluto lo más frecuente y es usarlas conjuntamente, conectándolos y haciendo que la Raspberry actúe como cerebro y Arduino como ejecutor.
 
 Vistas las diferencias entre los dos dispositivos queda claro que son perfectamente complementarios:
 
