@@ -42,16 +42,16 @@ Y si la vas a usar como un ordenador
 * [www.bricogeek.com](http://www.bricogeek.com)
 * [www.raspipc.com](http://www.raspipc.com)
 
-Veamos algunos kits
+#### Veamos algunos kits de Inven (CODIGO de descuento: KITRASPI2017)
 
-*   [Raspberry](http://inven.es/raspberry-pi/557-kit-raspberry-pi-3-tarjeta-16gb-transformador-corriente.html)                      
+* [Raspberry](http://inven.es/raspberry-pi/557-kit-raspberry-pi-3-tarjeta-16gb-transformador-corriente.html)                      
 * [Raspberry básico](http://inven.es/raspberry-pi/368-inven-pi3-kit-raspberry-pi-3-basico.html)
 
 * [Raspberry completo](http://inven.es/raspberry-pi/369-inven-pi3-kit-raspberry-pi-3-completo.html)
 
 * [Raspberry + electrónica](http://inven.es/raspberry-pi/370-inven-pi3-kit-raspberry-pi-3-electronica.html)
 
-CODIGO de descuento: KITRASPI2017
+#### Otros kits
 
 * [Kit base](http://www.electan.com/kit-raspberry-con-caja-alimentador-microsd-hdmi-usb-p-6584.html)
 * [Shield electronica](http://tinkersphere.com/raspberry-pi-hats/633-starter-raspberry-pi-led-hat.html)
