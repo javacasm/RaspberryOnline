@@ -23,3 +23,36 @@ Y si la vas a usar como un ordenador
 * Hub USB con alimentación, así podremos añadir más dispositivos y evitaremos cargar la potencia de la Raspberry
 
 ![Carcasa hecha con Lego](./images/carcasaLego.jpg)
+
+### ¿Dónde encontrarlos?
+
+![Kit Raspberry Pi](http://www.electan.com/product_thumb.php?img=images/RaspberryKit2.jpg)
+
+
+* [Raspberry.org](http://Raspberry.org)
+* [www.inven.es](http://www.inven.es)
+* [www.electan.com](http://www.electan.com)
+* [www.amazon.es](http://www.amazon.es)
+* [www.bricogeek.com](http://www.bricogeek.com)
+* [www.raspipc.com](http://www.raspipc.com)
+
+#### Veamos algunos kits de Inven (CODIGO de descuento: KITRASPI2017)
+
+* [Raspberry](http://inven.es/raspberry-pi/557-kit-raspberry-pi-3-tarjeta-16gb-transformador-corriente.html)                      
+* [Raspberry básico](http://inven.es/raspberry-pi/368-inven-pi3-kit-raspberry-pi-3-basico.html)
+
+* [Raspberry completo](http://inven.es/raspberry-pi/369-inven-pi3-kit-raspberry-pi-3-completo.html)
+
+* [Raspberry + electrónica](http://inven.es/raspberry-pi/370-inven-pi3-kit-raspberry-pi-3-electronica.html)
+
+#### Otros kits
+
+* [Kit base](http://www.electan.com/kit-raspberry-con-caja-alimentador-microsd-hdmi-usb-p-6584.html)
+* [Shield electronica](http://tinkersphere.com/raspberry-pi-hats/633-starter-raspberry-pi-led-hat.html)
+* [Kit amazon 1](http://www.amazon.es/s/ref=sr_pg_2?rh=i%3Aaps%2Ck%3Araspberry+pi+2+kit+starter&page=2&sort=price-asc-rank&keywords=raspberry+pi+2+kit+starter&ie=UTF8&qid=1449858467)
+* [Kit Amazon 2 1](http://www.amazon.es/Raspberry-Pi-Quad-Core-Starter/dp/B00T7KW3Y0/ref=sr_1_15?ie=UTF8&qid=1449858467&sr=8-15&keywords=raspberry+pi+2+kit+starter)
+* [Kit Amazon 3](http://www.amazon.es/Raspberry-Pi-Quad-Starter-Bundle/dp/B00T7OHE9A/ref=sr_1_18?ie=UTF8&qid=1449858497&sr=8-18&keywords=raspberry+pi+2+kit+starter)
+
+* [Kit base](http://www.electan.com/kit-raspberry-con-caja-alimentador-microsd-hdmi-usb-p-6584.html)
+* [Shield electronica](http://tinkersphere.com/raspberry-pi-hats/633-starter-raspberry-pi-led-hat.html)
+* [kit amazon](http://www.amazon.es/s/ref=sr_pg_2?rh=i%3Aaps%2Ck%3Araspberry+pi+2+kit+starter&page=2&sort=price-asc-rank&keywords=raspberry+pi+2+kit+starter&ie=UTF8&qid=1449858467)
