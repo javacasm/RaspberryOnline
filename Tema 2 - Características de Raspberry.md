@@ -34,21 +34,17 @@ En el siguiente enlace podemos leer en detalle sobre las diferentes  [Versiones]
 
 ![Diferentes modelos de Raspberry Pi](images/raspberry-pi-models.jpg)
 
-La versión más actual es la [Version 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+Las versiones más actuales son la Raspberry 3 y la Zero.
 
-Dispone de un procesador quad core a 1.2GHz con 1Gb, Wifi y bluetooth, 4 USB, HDMI, ethernet y salida de audio.
+La Raspberry Pi [Version 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) dispone de un procesador quad core a 1.2GHz con 1Gb, Wifi y bluetooth, 4 USB, HDMI, ethernet y salida de audio.
 
 ![Raspberry Pi versión 3](https://www.raspberrypi.org/app/uploads/2016/02/Raspberry-Pi-3-top-down-web.jpg)
 
-y la [Zero](https://www.raspberrypi.org/products/pi-zero/)
-
-Es una versión superreducida con el mismo procesador pero a 1Ghz y  512Mb de RAM. La gran diferencia es que casi no dispone de conectores, para así reducir su tamaño y precio ¡Cuesta 5€!
+La Raspberry [Zero](https://www.raspberrypi.org/products/pi-zero/) es una versión superreducida con el mismo procesador pero a 1Ghz y  512Mb de RAM. La gran diferencia es que casi no dispone de conectores, para así reducir su tamaño y precio ¡Cuesta 5€!
 
 ![Raspberry Pi Zero](https://www.raspberrypi.org/app/uploads/2016/02/Raspberry-Pi-Zero-web.jpg)
 
 ### Versión antiguas
-
-
 
 #### Raspberry Versión B
 Tenía 512M de RAM, ethernet y 2 puertos USB
