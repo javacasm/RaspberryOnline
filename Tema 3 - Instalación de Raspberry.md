@@ -178,7 +178,7 @@ En la versión 3 de Raspberry no se puede cambiar la velocidad del procesador de
 
 ### Configuración de idiomas y teclado
 
-![ConfRaspiInterfaces](./images/ConfRaspLocalizacion.png)
+![Configuración del idioma y teclado](./images/ConfRaspLocalizacion.png)
 
 Esta parte de la configuración es fundamental para configurar la zona horaria, el idioma (Local) y el teclado
 
@@ -199,13 +199,13 @@ Si necesitamos configurar desde consola de texto  podemos lanzar la aplicación 
 
 Y obtendremos las pantallas de configuración. (Puede variar algo según la versión)
 
-![config](./images/config.png)
+![Configuración en modo texto](./images/config.png)
 
-![teclado](./images/teclado.png)
+![Configuración de teclado](./images/teclado.png)
 
-![avanzado](./images/avanzados.png)
+![Configuración avanzada](./images/avanzados.png)
 
-![overclock](./images/overcock.png)
+![Configuración de overclock (aceleración)](./images/overcock.png)
 
 Una vez configurado podemos abrir el entorno visual con
 
