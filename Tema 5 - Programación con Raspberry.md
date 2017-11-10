@@ -64,6 +64,11 @@ Vamos a ver algunos ejemplos de cómo utilizarlos junto con la cámara.
 
 La cámara tiene su propio conector, junto a las conectores GPIO.
 
+Para conectarla pondremos el cable de la manera que se ve en la imagen
+
+![Cable de la Cámara](./images/Pi-camera-Socket.jpg)
+
+
 Antes de poder utilizarla tenemos que activarla
 
 		sudo raspi-config
