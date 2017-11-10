@@ -256,9 +256,9 @@ Editamos la configuracion
 
 Lo arrancamos
 
-	sudo montion -n
+	montion -n
 
 
 Podremos acceder a la imagen en vivo de la cámara con
 
-	 http://rasperry_ip:8001
+	 http://rasperry_ip:8081
