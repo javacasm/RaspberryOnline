@@ -73,22 +73,30 @@ Veamos como llaman a los distintos pines
 
 Para instalarlo tenemos que tener instalado parte del entorno de desarrollo de python
 
-		sudo apt-get install python-dev python-setuptools git-core
+		sudo apt-get install python-dev python-pip
 
 Descargamos el código (también podíamos haber descargado el fichero zip)
 
-		git clone git://git.drogon.net/wiringPi
+		sudo pip install wiringpi
 
 La compilamos
 
 		./build
 
-Y ya podemos udarla
+Y ya podemos usarla
 
 		gpio readall
 
 
 ![Leer el estado de todos los pines](./images/readall.png)
+
+
+
+
+
+
+
+
 
 ### Conectando un led
 
@@ -103,15 +111,15 @@ El montaje sería
 Hagamos un programa que parpadea el led conectado
 
 		import time
-		# Importamos la librería wiringpi
-		import wiringpi2
-		#Configuramos la numeración de los pines con respecto al
-		#estandar de la librería wiringpi (pin de entrada salida
+		# Importamos la libreria wiringpi
+		import wiringpi
+		# Configuramos la numeracion de los pines con respecto al
+		# estandar de la libreria wiringpi (pin de entrada salida
 		#	GPIO0)
 
-		io = wiringpi2.GPIO(wiringpi2.GPIO.WPI_MODE_PINS)
+		io = wiringpi.GPIO(wiringpi.GPIO.WPI_MODE_PINS)
 
-		#Configuramos el pin 0 como salida
+		# Configuramos el pin 0 como salida
 		io.pinMode(0,io.OUTPUT)
 
 		# Ciclo for que ejecutamos 3 veces
