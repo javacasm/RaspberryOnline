@@ -66,7 +66,7 @@ El micro quad core va a 900MHz  y tiene 1Gb de RAM, 4 puertos USBs. Incorporan e
 
 En 2014 se libera esta versión con algunas mejoras internas, pero sin grandes cambios
 
-[Vídeo](https://youtu.be/urPX8uvKWIc) sobre los distintos modelos/versiones de Raspberry Pi
+[Vídeo](https://youtu.be/ZBq6ZPE5r9c) sobre los distintos modelos/versiones de Raspberry Pi
 
 
 ### Referencias
