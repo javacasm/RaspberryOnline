@@ -132,7 +132,7 @@ Veamos algunos de ellos:
 
 ¿Conoces algún clon más? No dudes en decirlo.
 
-[Vídeo](https://youtu.be/-4eTGF2BCkg) sobre los clones de Raspberry Pi
+[Vídeo](https://youtu.be/OX3YdERMgOo) sobre los clones de Raspberry Pi
 
 ### Referencias
 
