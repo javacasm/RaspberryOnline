@@ -58,8 +58,9 @@ Las versiones de 40 pines
 
 ### Librerías
 
-Hay 4 librerías GPIO que nos facilitarán el utilizarlos (todas en python)
+Hay 5 librerías GPIO que nos facilitarán el utilizarlos (todas en python)
 
+* gpiozero soportada por Raspberry Pi y de la que podemos ver un excelente tutorial [aquí](https://projects.raspberrypi.org/en/projects/physical-computing)
 * Shell (línea de comandos)
 * Rpi. GPIO
 * wiringPi (Gordon Henderson wiringpi.com)
@@ -459,30 +460,13 @@ Y para ejecutarlo
 
 ## Algunos enlaces
 
-Veamos algunos enlaces interesantes sobre tutoriales de
-electrónica
+Veamos algunos enlaces interesantes sobre tutoriales de electrónica
 *  http://www.sc.ehu.es/sbweb/electronica/elec_basic
 a/default.htm
 *  http://www.tutoelectro.com/
 *  http://www.electronicafacil.net/circuitos/
 *  http://www.areatecnologia.com/
 *  http://www.simbologia-electronica.com/
-*  Un instructable que empieza desde lo más fundamental y llega hasta
-montar un circuito oscilador con un 555. Lo más probable es que
-cualquiera que tenga una mínima inquietud por el tema se pueda saltar
-los primeros pasos, pero en cualquier caso vale la pena.
-*  Otro instructable que explica diversos componentes y sus símbolos en
-los esquemas
-*  Un repositorio de circuitos enorme,
-*  Un listado de bloques básicos para entender y crear circuitos
-electrónicos
-*  Estudios teóricos de electronica: el club de electrónica tiene montado un
-muy completo grupo de tutoriales que abarcan desde los conceptos
-básicos de la corriente eléctrica hasta ejemplose de curcuitos y
-proyectos básicos, pasando por componentes, como por ejemplo los
-transistores
-*  Página de documentación de la tienda yourduino: Páginas interesantes
-que he visto tratan sobre manejo de potencia con arduino, libros sobre
 
 ## Conexión con Arduino
 
