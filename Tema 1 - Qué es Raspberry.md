@@ -49,13 +49,17 @@ Utiliza un diseño avanzado, como podemos ver en la imagen donde se ve que se ha
 
 ![Diseño avanzado](./images/EncapsuladoCPU-RAM.JPG)
 
-La versión más actual es la [Versión 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (1.2GHz quad core 1Gb Wifi y bluetooth)
+Actualmente existen varios formatos, vamos a ver los más usados:
 
-![Raspberry Pi versión 3](https://www.raspberrypi.org/app/uploads/2016/02/Raspberry-Pi-3-top-down-web.jpg)
+* La versión más actual a día de hoy (2 de Octubre de 2019) es la [Versión 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) (1.5GHz quad core hasta 4Gb, USB 3, Gigabit, Wifi y bluetooth)
 
-y la versión [Zero](https://www.raspberrypi.org/products/pi-zero/) (1Ghz 512Mb)
+![Raspberry Pi versión 4](./images/Raspberry-Pi-4.jpg)
+
+* La versión [Zero](https://www.raspberrypi.org/products/pi-zero/) (1Ghz 512Mb) con un tamaño muy pequeño
 
 ![Raspberry Pi Zero](https://www.raspberrypi.org/app/uploads/2016/02/Raspberry-Pi-Zero-web.jpg)
+
+Más adelante veremos muchos más detalles de esta versión y de las anteriores. No te precipites a comprarla, porque a lo mejor vale más la pena adquirar una versión algo más antigua como la 3+ 
 
 
 Puedes encontrar más detalles en la [página de la wikipedia]([Artículo de la wikipedia sobre RaspBerry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi)
@@ -336,6 +340,10 @@ Te recomiendo estos 3 libros.
 ### Tutoriales
 
 Algunos tutoriales para aprender rápidamente a manejar tu Raspberry Pi
+
+(Si solo puedes mirar uno mira el primero)
+
+[Proyectos con Raspberry](http://projects.raspberrypi.org)
 
 [Raspberry pi Class (instructables)](http://www.instructables.com/class/Raspberry-Pi-Class/?utm_source=newsletter&utm_medium=email)
 
