@@ -8,15 +8,21 @@
 
 ### Componentes Obligatorios
 
-* Raspberry Pi
-* Fuente de alimentación de 5V con conector micro-USB con al menos 2A (mejor si son 2.5A)
-* Tarjeta SD de al menos 4 GB  o más ([máximo 128Gb par la Raspberry Pi 3](https://www.raspberrypi.org/help/faqs/#sdMax)). Se recomienda de clase 10 por su velocidad. La calidad de la tarjeta es crítica, en tarjetas baratas con problemas de rendimiento nos vamos a encontrar cuelgues inesperados e incluso puede que no arranque.
+* Raspberry Pi (ahora hablaremos del modelo a elegir...)
+* Fuente de alimentación de 5V con conector micro-USB con al menos 2A (mejor si son 2.5A) para la Raspberry Pi 3+ o fuente de 5V con conector USB-C y al menos 3A para la Raspberry Pi 4, pero cuidado porque hay algunas fuentes que no funcionan bien.
+* Tarjeta SD de al menos 8 GB  o más ([máximo 128Gb par la Raspberry Pi 3 y 4](https://www.raspberrypi.org/help/faqs/#sdMax)). Se recomienda de clase 10 por su velocidad. La calidad de la tarjeta es crítica, en tarjetas baratas con problemas de rendimiento nos vamos a encontrar cuelgues inesperados e incluso puede que no arranque.
 * Cable de red ethernet (no es necesario si tenemos Wifi, pero facilita la primera conexión que no requiere configuración)
 
 Y si la vas a usar como un ordenador
 
-* Monitor y cable HDMI (o VGA con adaptador. Existen muchos tipos de conversores, pero no todos funcionan bien con cables largos)
+* Monitor y cable HDMI (o VGA con adaptador. Existen muchos tipos de conversores, pero no todos funcionan bien con cables largos) para la 3 o cable mini-HDMI para la versió 4
 * Teclado y raton USB (mejor si es inalámbrico, porque consume menos)
+
+## ¿Raspberry 3+ o 4? 
+
+Esa es la pregunta del millón: Las primeras unidades del último modelo 4 han salido con algunos problemas de calientamiento y no funcionan con algunas fuentes de alimentación de tipo USB-C
+
+Por esto, salvo que necesites una gran cantidad de procesamiento o tus aplicaciones usen mucha RAM, yo a día de hoy me esperaría para comprar la v4. Seguro que en unos meses esos problemas de diseño se resuelven y ahí si que será la mejor opción. 
 
 ### Opcionales
 
@@ -42,7 +48,7 @@ Y si la vas a usar como un ordenador
 * [www.bricogeek.com](http://www.bricogeek.com)
 * [www.raspipc.com](http://www.raspipc.com)
 
-#### Veamos algunos kits de Inven (CODIGO de descuento: KITRASPI2017)
+#### Veamos algunos kits de Inven
 
 * [Raspberry](http://inven.es/raspberry-pi/557-kit-raspberry-pi-3-tarjeta-16gb-transformador-corriente.html)                      
 * [Raspberry básico](http://inven.es/raspberry-pi/368-inven-pi3-kit-raspberry-pi-3-basico.html)
@@ -67,27 +73,39 @@ Y si la vas a usar como un ordenador
 
 ## Sistemas operativos disponibles
 
-Existen muchos sistemas operativos (SO) disponibles para Raspberry, cada uno de ellos está pensado para un fin concreto.
+Existen varios sistemas operativos (SO) disponibles para Raspberry, cada uno de ellos está pensado para un fin concreto.
 
 Piensa que para cambiar entre SO, sólo tienes que apagar tu Raspberry, cambiar la tarjeta SD y volver a arrancar. Yo suelo tener varias SDs con los diferentes SO
 
+Puedes ver algunos de ellos en la página de [descargas de Raspberry.org](https://www.raspberrypi.org/downloads/)
+
+Veamos algunos de los más utilizados
+
 ### [Noobs](https://www.raspberrypi.org/downloads/noobs/)
 
-Es un SO mínimo pensado para facilitar la instalación. Nos arranca el sistema y nos permite luego elegir qué sistema operativo instalar, y si tenemos suficiente espacio en la tarjeta, podremos instalar varios.
+Es un SO mínimo pensado para facilitar la instalación. Arranca el sistema y nos permite luego elegir qué sistema operativo instalar, y si tenemos suficiente espacio en la tarjeta, podremos instalar varios en una misma SD
 
 ![noobs](./images/noobs.png)
 
+Sin duda es la mejor opción para el principiante. Además nos permite hacer un primera configuración de la red y seleccionar el idioma.
+
 ### [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
 
-Es la versión para Raspberry de Debian (Linux). Es el sistema operativo más usado y contiene todo lo necesario.
+Es la versión para Raspberry de Debian (una de las distribuciones de Linux con mayor solera). Es el sistema operativo más usado y contiene todo lo necesario.
+
+![Raspbian](./images/Raspbian.jpg)
 
 ### [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/)
 
 Es una versión de Ubuntu (Linux) para la Raspberry
 
-### [Snappy Ubuntu Core](https://developer.ubuntu.com/en/snappy/start/#snappy-raspi2)
+### [Ubuntu Core](https://developer.ubuntu.com/en/snappy/start/#snappy-raspi2)
 
-Es un Ubuntu (Linux) reducido al mínimo para funcionar en equipos más pequeños
+Es un Ubuntu (Linux) reducido al mínimo para funcionar en equipos más pequeños optimizado para un mejor rendimiento
+
+### [Ubuntu Server](https://www.ubuntu.com/download/iot/raspberry-pi-2-3)
+
+Para convertir tu Raspberry en un auténtico servidor
 
 ### [Windows 10 IOT Core](http://ms-iot.github.io/content/en-US/Downloads.htm)
 
@@ -97,15 +115,25 @@ Es una versión reducida de Windows 10
 
 Es un SO orientado a convertir la Raspberry Pi en un centro multimedia
 
+### [LibreElec](http://libreelec.tv/)
+
+Otra distribución especializada en el entretenimiento y que utiliza el conocido gestor multimedia [Kodi](https://kodi.tv/)
+
 ![OpenElec](./images/openelec-vs-osmc-ft-500x281.jpg)
 
+### [Chrome OS](https://flintos.io/)
 
-### [Chrome OS](http://www.hwlibre.com/chrome-os-llega-raspberry-pi-otras-placas-sbc/)
+Es un port de la parte opensource del sistema operativo Chrome OS de Google para Raspberry
 
-### [Android](https://www.raspberrypi.org/magpi/android-raspberry-pi/)
+### [Android](https://emteria.com/)
 
+Se trata de un port de Android para Raspberry. En [este tutorial](https://www.raspberrypi.org/magpi/android-raspberry-pi/) nos dicen cómo instalarla.
 
-### ([¿Dónde encontrarlos?](https://www.raspberrypi.org/downloads/))
+### [Retropie](https://retropie.org.uk/)
+
+Es una distribución que contiene varios emuladores de máquinas recreativas y videoconsolas y que convierten a nuestra Raspberry en un máquina de jugar 
+
+![Máquina de juegos con RAspberry Pi](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Arcade_bartop.jpg/800px-Arcade_bartop.jpg)
 
 Una vez elegida la imagen vamos a proceder a instalar
 
@@ -115,15 +143,36 @@ Una vez elegida la imagen vamos a proceder a instalar
 
 * Formatear tarjeta ([http://www.sdcard.org/downloads/formatter_4/](http://www.sdcard.org/downloads/formatter_4/))
 * Descargamos la imagen del sistema que queramos [http://www.raspberrypi.org/download](http://www.raspberrypi.org/download)
+* Grabamos la imagen en la tarjeta por ejempo con la herramienta multiplataforma etcher (Windows, OsX y Linux) para instalar imagenes https://etcher.io/
+
+![ethcer](./images/etcher.io.png)
+
 * ¿Qué imagen usar?
-	* Empecemos con [Noobs](https://www.raspberrypi.org/blog/tag/noobs/)
-	* [Instalación de Noobs](https://www.raspberrypi.org/help/noobs-setup/)
+	* Empecemos con [Noobs](https://www.raspberrypi.org/blog/tag/noobs/) que nos va a permitir instalar otras imágenes.
+    * Tenemos 2 opciones para descargar la imagen de noobs:
+        * Una instalación mínima de noobs, que descargará luego todo lo necesario desde la red
+        * Una instalación basde de Noobs que incluye todo lo necesiario para instalar el sistema operativo Raspbian, que es el más usado y que una vez copiado en la tarjeta no necesita conexión a la red	
+	* [Más detalles sobre la instalación de Noobs](https://www.raspberrypi.org/help/noobs-setup/)
 
 	![noobs](./images/noobs.png)
 
-* ¡¡¡Arrancar!!!
+Vemos que desde la pantalla de arranque de noobs nos permite elegir la imagen que queremos instalar. 
 
-Aparecerá una pantalla multicolor
+Algunas aparecen directamente (ya están en la tarjeta) y si tenemos conectividad a internet (bien por que tenemos conectado un cable ethernet o porque hemos configurado el wifi) podremos seleccionar más imágenes, que se descargarán durante la instalación.
+
+Podemos instalar varios sistemas operativos y cada vez que arranquemos podremos escoger cuál queremos usar.
+
+Según la selección que hagamos hará falta más espacio en la tarjeta y pudiera ocurrir que no quepan todos los que queremos instalar.
+
+Podemos seleccionar el idioma y la configuración de teclado
+
+Para empezar deberíamos seleccionar Raspbian y se arrancará el proceso de instalación, que tarda unos minutos
+
+##  ¡¡¡Arrancar!!!
+
+![Booting Raspbian](./images/Booting-Raspbian.png)
+
+Al arrancar el sistema Raspian aparecerá una pantalla multicolor que nos indica que la imagen está operativa.
 
 ![Imagen multicolor en el arranque de Raspberry pi](./images/raspberry-pi-boot-rainbow.jpg)
 
@@ -131,13 +180,13 @@ Y después se verá en formato texto el arranque
 
 ![Arranque de Raspberry Pi](./images/raspi2boot.jpg)
 
-Si todo va bien veremos el escritorio Pixel
+Si todo va bien al cabo de unos segundos veremos el escritorio Pixel, un escritorio ligero pero con buen aspecto y con la funcionalidad a la que estamos acostumbrados hoy en día
 
 ![Escritorio Pixel](./images/PixelMenu.png)
 
+Vamos a ver algunos de los menús e iconos más importantes de pixel.
+
 A la izquierda tenemos el menú de aplicaciones y a la derecha podemos pulsar sobre el icono del Wifi o de la red para configurarla si fuera necesario.
-
-
 
 ![Configuración Wifi de Raspberry](./images/wifi2.png)
 
@@ -174,7 +223,7 @@ Si vamos a acceder desde otro ordenador deberemos activar SSH en el caso de  acc
 
 ![Configuración de rendimiento](./images/ConfRaspRendimiento.png)
 
-En la versión 3 de Raspberry no se puede cambiar la velocidad del procesador desde este interface (en las versiones anteriores sí), pero sí que podemos cambiar la cantidad de memoria que se asigna al procesador gráfico con lo que conseguiremos que aplicación que usan intensivamente gráficos vayan más rápidas
+A partir de la versión 3 de Raspberry no se puede cambiar la velocidad del procesador desde este interface (en las versiones anteriores sí), pero sí que podemos cambiar la cantidad de memoria que se asigna al procesador gráfico con lo que conseguiremos que aplicación que usan intensivamente gráficos vayan más rápidas
 
 ### Configuración de idiomas y teclado
 
