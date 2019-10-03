@@ -1,0 +1,34 @@
+# Test Tema 2
+
+1. El conector CSI es ...
+* a) Un conector para la cámara de la Raspberry
+b) Un conector para investigar con la Raspberry
+c) Un conector de redes
+d) Un conector para un monitor específico
+
+
+2. La Raspberry Pi 3 tiene un conector GPIO de
+a) 21 pines
+* b) 40 pines
+c) 25 pines
+d) 18 pines
+
+3. La versión más pequeña en tamaño es ...
+a) Raspberry Mini
+b) Raspberry 0.5
+* c) Raspberry Zero
+d) Raspberry 1
+
+4. El principal problema de los clones de Raspberry es ...
+
+* a) No tienen una gran comunidad detrás que desarrolle y mantenga tantos contenidos y proyectos
+b) La documentación no está en español
+c) Su precio es más alto
+d) No tienen tanta capacidad
+
+5. El conector DSI es ...
+
+a) Para conectar cualquier periferico
+* b) Para conectar un monitor específico
+c) Para la cámara de la Raspberry
+d) Para conectar redes
