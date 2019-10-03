@@ -79,13 +79,17 @@ Lo instalamos en el sistema (por eso necesitamos usar sudo)
 
 	sudo make install
 
-## Problemas
+## Problemas habituales
 
 Siempre podemos encontrarnos con problemas. Veamos los más frecuentes
 
 ### Alimentación
 
-Necesitamos un mínimo de 2A, si la alimentación está por debajo se pueden producir cuelgues inesperados e incluso que no arranque.
+Necesitamos un mínimo de 2A (3A para V4), si la alimentación está por debajo se pueden producir cuelgues inesperados e incluso que no arranque.
+
+Cuando la Raspberry detecta que no tiene suficiente alimentación visualiza un rayo amarillo en la pantalla
+
+![Problemas de alimentación. Fuente RasberryParaTorpes](https://i0.wp.com/raspberryparatorpes.net/wp-content/uploads/2018/02/raspberry-pi-under_volt.jpg?resize=500%2C300&ssl=1)
 
 ### Velocidad de la tarjeta
 
@@ -93,7 +97,7 @@ Se recomienda velocidad 10, una velocidad menor da problemas como bloqueos
 
 ### Espacio en disco
 
-Al menos 4Gb por sistema operativo, mejor 8Gb o más
+Al menos 8Gb por sistema operativo, mejor 16Gb o más
 
 ### No se ve nada en el monitor
 
@@ -107,11 +111,17 @@ Como sabes es una máquina Linux, con lo que podrás manejarla igual que se mane
 
 ### Consola (línea de comandos)
 
-![console](./images/console.png)
+Podemos hacer casi todo desde el habitual entorno gráfico, pero también desde el terminal o la consola, también llamada líneas de comandos.
+
+Si te acostumbras a usarla verás que ganas en productividad y además verás que puedes automatizar muchas tareas. 
+
+![consola](./images/console.png)
 
 #### Comandos básicos:
 
 [Vídeo: Uso del terminal y comandos Linux en Raspberry Pi](https://youtu.be/BF0Kjb4g454)
+
+Como ya hemos dicho, Raspbian es una versión de [Linux](https://es.wikipedia.org/wiki/GNU/Linux), que nos más que una versión moderna del sistema operativo [Unix](https://es.wikipedia.org/wiki/Unix). Por esto tenemos acceso a los comandos de esos sistemas operativos.
 
 Veamos algunos de los comandos más utilizados:
 
@@ -163,15 +173,29 @@ El usuario sólo acceso a su directorio y el solo el administrador (**root**) pu
 
 #### Usuarios
 
-El usuario por defecto es "**pi**" con contraseña "**raspberry**"
+El usuario por defecto es "**pi**" con contraseña "**raspberry**" por defecto
 
 #### Cuidado con sudo
+
+Los usuarios normales pueden hacer muchas cosas, pero las tareas más importantes (y por tanto peligrosas si se hacen mal), como pueden ser la configuración o borrado de ficheros críticos no están permitidas.
+
+Esas tareas sólo las puede hacer el usuario administrador, llamado **root**, que puede hacer cualquier cosa. 
+
+Como hay veces que un usuario necesita hacer alguna de estas tareas, por ejemplo editar un fichero de configuración, podemos solicitar permisos para hacer esa tarea anteponiento al comando la palabra "sudo". Algunas acciones nos pedirán que introduzcamos el password de nuestro usuario como medida de seguridad.	
+
+Por ejemplo si queremos editar un fichero de la carpeta de configuración etc llamado ftab, haremos
+
+	sudo geany /etc/fstab
+	
+geany es el editor de ficheros de texto, y al usar "sudo" estamos pidiendo permiso para hacer algo como root
+
+Esto nos sirve para ver que podemos abrir aplicaciones de escritorio desde la consola.
 
 Nos da todo el poder del usuario administrador (**root**)
 
 ### Interface gráfico
 
-Para arrancar el interface gráfico (si no está arrancado) usaremos
+Para arrancar el interface gráfico desde consola si no está arrancado usando
 
 		startx
 
@@ -208,11 +232,11 @@ O bien usando algún software como [Putty](http://www.chiark.greenend.org.uk/~sg
 Conviene cambiar la contraseña para evitar que cualquiera pueda acceder
 
 
-### vnc
+### VNC
 
 VNC es un protocolo que nos permite acceder remotamente al escritorio de otra máquina.
 
-En las nuevas versiones de Raspbian podemos activar VNC desde la configuración (raspi-config).
+En las nuevas versiones de Raspbian podemos activar VNC desde la configuración (o desde raspi-config).
 
 Si no está disponible podemos instalarlo en nuestra Raspberry de manera sencilla con:
 
@@ -225,8 +249,13 @@ Este software requiere que un servicio se ejecute al arrancar si queremos accede
 
 ![vnc](./images/vnc.png)
 
-Ahora accederemos usando un cliente vnc
+Ahora accederemos usando un cliente vnc, como por ejemplo [VNC Viewer](https://www.realvnc.com/es/connect/download/viewer/) de RealVNC. Si nos creamos una cuenta en RealVNC podremos acceder desde cualquier parte, incluso desde internet, sorteando nuestro router.
 
+![Acceso con cuenta de usuario VNC](./images/VNC_CuentaUsuario.png)
+
+Existen clientes de VNC para teléfonos móviles y tabletas, lo que nos da muchas posibilidades
+
+La conexión por VNC nos permite acceder como si estuvieramos conectados directamente
 
 ### Acceso directo
 
@@ -325,3 +354,59 @@ Lo arrancamos
 Podremos acceder a la imagen en vivo de la cámara con
 
 	 http://rasperry_ip:8081
+	 
+## Raspberry como centro multimedia
+
+La distribución LibreELEC está pensada para usar nuestra Raspberry como un centro multimedia, conectándola a un Televisor y con todo lo necesario para poder reproducir tanto vídeo, música o imágenes.
+
+El centro de la distribución es Kodi, un reproductor multimedia muy avanzado y por su naturaleza modular podemos adaptar para todo tipo de contenidos. Además podemos personalizarlo instalando Add-ons (complementos) para reproducir y para obtener nuestros contenidos.
+
+![LibreELEC](./images/Kodi1.jpg)
+
+Una vez instalada la distribución LibreELEC la seleccionamos en el arranque y entramos directamente a Kodi
+ 
+ La primera vez tendremos que seleccionar el idioma
+ 
+![Selección de idioma en Kodi](./images/KodiIdioma.jpg)
+
+
+Vemos como el interface está perfectamente adaptado a pantallas grandes y no necesitamos un teclado físico, si no que podemos usar un simple puntero/ratón.
+
+![Teclado en pantalla de Kodi](./images/TecladoKodi.jpg)
+
+Damos un nombre al equipo y configuramos el acceso remoto por ssh (para acceder desde otro equipo) y por samba (para poder acceder a carpetas compartidas por equipo Windows o NAS), para lo que nos solicitará una contraseña.
+
+Después de ésto se actualizará y estará listo para usarlo
+
+![Pantalla de Kodi](./images/Kodi-normal.jpg)
+
+Para añadir las carpetas locales o remotes donde se almacenan los contenidos, entramos en el tipo que queramos (Películas en este ejemplo) y pulsamos sobre "Entrar en la sección de Archivos"
+
+[Añadiendo carpetas de contenidos](./images/KodiAnadiendoCarpetas.jpg)
+
+Pulsamos en "Añadir vídeos"
+
+![Añadiendo vídeos a Kodi](./images/KodiAnadiendoCarpetas2.jpg)
+
+Pulsamos "Buscar"
+
+![Buscar contenidos en Kodi](./images/KodiAnadiendoCarpetasBuscar.jpg)
+
+Y luego los buscamos en las opciones de red que nos aparece o pulsamos sobre "Añadir sitio de red" para rellenar los datos de la ip, nombre de carpeta, usuario y password
+
+![Añadir sitio de red](./images/KodiAddSitio.jpg)
+
+Aceptamos y ya debemos ver la carpeta para incluirla entre  los contenidos multimedia.
+
+También podemos añadir Add-ons entrando en la sección Add-ons y en Descargar. Vamos a ver cómo instalar el Add-ons de youtube
+
+![Descargar Add-ons](./images/Addons-descargar.jpg)
+
+Seleccionamos el tipo (vídeo en nuestro caso) y buscamos el que queramos
+
+![Addons de youtube](./images/Addons-youtube.jpg)
+
+Pulsamos instalar y nos dirá si necesitamos instalar algunos complementos de los que depende. Aceptamos y los tendremos disponibles como nueva fuentes de contenido multimedia.
+
+![Add-ons de vídeo](./images/MisAddons.jpg)
+
