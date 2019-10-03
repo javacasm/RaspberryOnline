@@ -1,0 +1,37 @@
+# Test Tema 1
+
+1. Los componentes esenciales para hacer funcionar una Raspberry Py son:
+
+* a) La Rasbperry Pi, una fuente de alimentación y una tarjeta SD
+b) La Rasbperry Pi y una tarjeta SD
+c) La Rasbperry Pi, una fuente de alimentación, un monitor y una tarjeta SD
+d) La Rasbperry Pi, una fuente de alimentación y un monitor
+
+2. Arduino y Raspberry Pi son ...
+
+a) Totalmente incompatibles
+* b) Un complemento perfecto: donde uno pone el músculo la otra pone el cerebro
+c) Mundos diferentes: Raspbery para escritorio y Arduino para hacer prototipos
+d) Demasiado caros
+
+3. Raspberry se creó pensando en ...
+
+a) Conseguir el mismo éxito que consigió Microsoft
+b) Crear una alternativa a los ordenadores de Apple
+* c) Un sistema barato para enseñar programación
+d) Intentar que no se pudiera copiar
+
+4. Los usos de Raspberry son ...
+
+* a) Prácticamente ilimitados
+b) Pocos
+c) Los que el fabricante nos facilita
+d) 3: Juegos, ofimatica y programación
+
+
+5. Los primeros diseños de Raspberry son de ...
+
+a) 2015
+b) 2000
+* c) 2005 - 2006
+d) 1970
