@@ -1,0 +1,31 @@
+# Test Tema 4
+
+1. Para actualizar nuestra Raspberry  ...
+* a) Ejecutamos sudo apt-get update y sudo apt-get upgrade
+b) No hay que hacer nada porque se mantiene actualizada sola
+c) Formateamos la tarjeta y reinstalamos
+d) Ejecutamos update-SO
+
+2. Para la alimentación de la Raspberry necesitamos  ...
+a) Una batería de 12V
+b) 220V AC
+c) 5V y 500mA
+* d) Una alimentación de 5V y al menos 2A
+
+3. El comando ls ...
+a) Lista los comandos más frecuentes
+* b) Muestra los archivos y directorios de la carpeta actual
+c) Borra los ficheros
+d) No está disponible en la última versión del SO
+
+4. SSH es ...
+a) Un comando silencioso
+* b) Una manera de acceder remotamente a la Raspberry
+c) Un comando de seguridad secreta
+d) No está disponible en la última versión del SO
+
+5. Podemos convertir nuestra Raspberry en un equipo de vigilancia  con ...
+* a) Una cámara y el programa motion
+b) Una  cámara de seguridad
+c) El comando motion
+d) El comando security
