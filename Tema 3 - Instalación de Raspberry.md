@@ -143,9 +143,10 @@ Una vez elegida la imagen vamos a proceder a instalar
 
 * Formatear tarjeta ([http://www.sdcard.org/downloads/formatter_4/](http://www.sdcard.org/downloads/formatter_4/))
 * Descargamos la imagen del sistema que queramos [http://www.raspberrypi.org/download](http://www.raspberrypi.org/download)
-* Grabamos la imagen en la tarjeta por ejempo con la herramienta multiplataforma etcher (Windows, OsX y Linux) para instalar imagenes https://etcher.io/
+* Si usamos una imagen tipo Noobs, basta con que descomprimamos el contenido del fichero zip en la tarjeta SD
+* Si es una imagen (fichero tipo img o iso) lo grabamos por ejempo con la herramienta multiplataforma Etcher (Windows, OsX y Linux) para instalar imagenes https://www.balena.io/etcher/
 
-![ethcer](./images/etcher.io.png)
+![Etcher](./images/etcher.io.png)
 
 * ¿Qué imagen usar?
 	* Empecemos con [Noobs](https://www.raspberrypi.org/blog/tag/noobs/) que nos va a permitir instalar otras imágenes.
@@ -161,6 +162,8 @@ Vemos que desde la pantalla de arranque de noobs nos permite elegir la imagen qu
 Algunas aparecen directamente (ya están en la tarjeta) y si tenemos conectividad a internet (bien por que tenemos conectado un cable ethernet o porque hemos configurado el wifi) podremos seleccionar más imágenes, que se descargarán durante la instalación.
 
 Podemos instalar varios sistemas operativos y cada vez que arranquemos podremos escoger cuál queremos usar.
+
+![Instalación de varios sistemas](./images/VariosSistemas.jpg)
 
 Según la selección que hagamos hará falta más espacio en la tarjeta y pudiera ocurrir que no quepan todos los que queremos instalar.
 
@@ -180,9 +183,15 @@ Y después se verá en formato texto el arranque
 
 ![Arranque de Raspberry Pi](./images/raspi2boot.jpg)
 
+Si hemos instalado varios sistemas podremos elegir entre ellos, si no hacemos nada arrancará el último que usáramos.
+
+![Selección de OS](./images/ArranqueVariosSistemas.jpg)
+
 Si todo va bien al cabo de unos segundos veremos el escritorio Pixel, un escritorio ligero pero con buen aspecto y con la funcionalidad a la que estamos acostumbrados hoy en día
 
 ![Escritorio Pixel](./images/PixelMenu.png)
+
+La primera vez que arranquemos tendremos que configura el idioma y la zona horaria, establecer la contraseña del usuario "pi" y el sistema se actualizará.
 
 Vamos a ver algunos de los menús e iconos más importantes de pixel.
 
