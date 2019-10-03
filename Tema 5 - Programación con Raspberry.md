@@ -22,7 +22,7 @@ Principalmente están pensados para facilitar la instalación de los entornos, q
 
 * [WebIDE](https://learn.adafruit.com/webide?view=all) Entorno Web que permite programar en Python, Ruby, Javascript y otros lenguajes
 
-![webide](https://cdn-learn.adafruit.com/assets/assets/000/002/173/medium800/adafruit_products_Using2.jpg)
+![WebIDE](https://cdn-learn.adafruit.com/assets/assets/000/002/173/medium800/adafruit_products_Using2.jpg)
 
 ## Scratch
 
@@ -46,23 +46,29 @@ Otros similares
 
 ### Scratch en nuestra Raspberry Pi
 
-La imagen Raspbian trae instalada la versión 1.4 de Scratch
+La imagen Raspbian trae instalada la versión de Scratch, en las últimas versiones ya está disponible Scratch 3
 
 ![Usando Scratch en Raspberry Pi](./images/ScratchRaspberry.png)
 
-[Programando con Scratch en Raspberry Pi](https://youtu.be/6veM85OpsKI)
+[Vídeo sobre cómo programar con Scratch en Raspberry Pi](https://youtu.be/6veM85OpsKI)
+
+Para usar la aplicación Scratch 3, es necesario una gran cantidad de RAM, al menos 1Gb sólo para la aplicación por lo que no se recomienda de momento su uso salvo en la Raspberry 4 con al menos 2 Gb de RAM
+
+[Vídeo de Scratch 3 en un Raspberry 4](https://youtu.be/mMYKjVri3QI) 
 
 ## Shell Script
 
 Los scripts son ficheros donde introducimos distintas órdenes que se irán ejecutando de forma consecutiva una tras otra
 
-Vamos a ver algunos ejemplos de cómo utilizarlos junto con la cámara.
+Vamos a ver algunos ejemplos de cómo utilizarlos junto con la cámara. Para ellos usaremos algunos de los comandos que tenemos para usar la cámara
 
 ### Usando la cámara
 
+Empezaremos conectando la cámara
+
 ![Camara de Raspberry Pi](./images/camara.jpg)
 
-La cámara tiene su propio conector, junto a las conectores GPIO.
+La cámara tiene su propio conector, junto al conector HDMI
 
 Para conectarla pondremos el cable de la manera que se ve en la imagen
 
@@ -171,7 +177,7 @@ Para una documentación más detallada sobre las opciones del ejecutable se pued
 
 ### Webcam
 
-Podemos usar cámaras USB compatibles  como  la PS3 Eye.
+También podemos usar cámaras USB compatibles  como  la PS3 Eye.
 
 Veremos si se ha detectado con:
 
@@ -189,7 +195,13 @@ Que nos permitirá tomar una imagen con
 
 	 fswebcam -d /dev/video0 -r 640x480 test.jpeg
 
-Hagamos ahora un script para hacer un timelapse
+Hagamos ahora un script para hacer un timelapse, que nos es otra cosa que un programa que ejecuta comandos de una forma determinada.
+
+Primero creamos un fichero con este contenido. Por ejemplo con el editor geany
+
+	geany ~/runtimelapse.sh 
+
+El contenido será el siguiente
 
 	#!/bin/bash
 	# Timelapse controller for USB webcam
@@ -202,10 +214,16 @@ Hagamos ahora un script para hacer un timelapse
 		sleep 10;
 	done;
 
+Una vez guardado, vamos a darle permiso para ejecutarlo.
+
+	chmod u+x ~/runtimelapse.sh
+
+Lo ejecutamos con
+
+	~/runtimelapse.sh
+
 Podemos ver que se están realizando capturas de imágenes cada 10 segundos y como mucho se guardarán 1440 imágenes.
 
-
-	./runtimelapse
 
 ### Control remoto de cámaras
 
@@ -289,6 +307,9 @@ Es más sencillo si escribimos nuestro código en un fichero (con cualquier edit
 
     python fichero.py
 
+En las últimas versiones se incluye el editor Thonny, que nos permite trabajar con pyhton con facilidad
+
+![Editor Thonny](./images/Thonny.png)
 
 Veamos algunos ejemplos
 
@@ -298,9 +319,9 @@ Veamos algunos ejemplos
 
 ```python
 # Programa que realiza la suma de dos valores
-a=input('numero 1');
-b=input('numero 2');
-suma = a + b;
+a=input('numero 1 ');
+b=input('numero 2 ');
+suma = int(a) + int (b);
 print (suma);
 ```
 
