@@ -1,4 +1,4 @@
-# Tema 10 - Electrónica con Raspberry Pi
+# Tema 6 - Electrónica con Raspberry Pi
 
 En este tema vamos a ver como conectar dispositivos electrónicos a la Raspberry Pi.
 
@@ -22,22 +22,22 @@ Existen diferentes adaptadores que nos facilitan el uso de electrónica y ademas
 
 ## Potencia
 
-Los pines de la Raspberry no proporcionan potencia, si necesitas mñas potencia tendrás que añadir electrónica.
+Los pines de la Raspberry no proporcionan potencia, más allá de encender unos leds. Si necesitas más potencia tendrás que añadir componentes electrónicos capaces de gestionarlo.
 
 ## GPIO
 
 ![GPIO](./images/GPIORasp.png)
 
-* Son los pines que podemos usar como salidas o como entradas, pero siempre de tipo digital.
-* Utilizan **3.3V**
+* Son los pines que podemos usar como salidas o como entradas, es decir, para activar dispositivos (leds, motores, etc) o para leer el estado de sensores, interruptores etc. Siempre funcionan en modo digital.
 * Podemos configurar cada uno como entrada o como salida
+* Utilizan **3.3V** Por ello tenemos que tener cuidado con lo conectamos. Un dispositivo que use 5V podría dañarla.
 * Algunos de ellos se pueden usar como comunicaciones especializadas: SPI, I2C, UART
 
 
 
 ## Pines
 
-Hay que tener cuidado con no equivocarse. Podemos usar una etiqueta
+Hay que tener cuidado con no equivocarse. Para evitar errores podemos usar una etiqueta
 
 ![Etiquetas para los pines](./images/etiquetas.png)
 
@@ -46,19 +46,19 @@ O esta otra versión del gran @pighixxx con los diferentes etiquetados
 ![Etiquetas ping](https://pbs.twimg.com/media/DACXWfzXkAE--mT.jpg)
 
 
-[Añadir etiquetas a los gpio de Raspberry](https://youtu.be/9UiZ7m6UacM)
+[Vídeo sobre etiquetas en los GPIO de Raspberry](https://youtu.be/9UiZ7m6UacM)
 
-Las distintas versiones tienen algunos pines distintos
+Las distintas versiones de la Raspberry tienen algunos pines distintos
 
 ![GPIO para la versión 2](./images/GPIOV2.png)
 
 Las versiones de 40 pines
 
-![GPIO de 40 pines](./images/RP2_Pinout.png)
+![GPIO de 40 pines](./images/pi2GPIO.jpg)
 
 ### Librerías
 
-Hay 5 librerías GPIO que nos facilitarán el utilizarlos (todas en python)
+Existen varias librerías que nos facilitarán el utilizarlos (todas usand lenguaje python como base). Nosotros veremos 5 de ellas.
 
 * gpiozero soportada por Raspberry Pi y de la que podemos ver un excelente tutorial [aquí](https://projects.raspberrypi.org/en/projects/physical-computing)
 * Shell (línea de comandos)
@@ -90,13 +90,6 @@ Y ya podemos usarla
 
 
 ![Leer el estado de todos los pines](./images/readall.png)
-
-
-
-
-
-
-
 
 
 ### Conectando un led
@@ -222,7 +215,7 @@ El bus I2C y SPI nos permiten conectar con dispositivos externos que nos
 expanden su funcionalidad. Es como si conectáramos periféricos a nuestra
 Raspberry.
 
-![pines](./images/pi2GPIO.jpg)
+![GPIO de 40 pines](./images/pi2GPIO.jpg)
 
 * También están disponibles las líneas de alimentación de 5v y 3.3v y por supuesto tierra.
 
