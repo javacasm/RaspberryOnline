@@ -1,0 +1,34 @@
+# Test Tema 3
+
+1. El tamaño mínimo de la tarjeta SD para usar en una Raspberry es ...
+
+* a) 4Gb
+b) 5Mb
+c) 1Gb
+d) 128Gb
+
+2. Noobs es ...
+
+a) El sistema operativo de Raspberry más moderno
+*b) Un imagen que nos permite elegir el sistema operativo que instalaremos
+c) El sistema operativo más potente para Raspberry
+d) Un sistema operativo para Raspberry dedicado a videojuegos
+
+3. En Raspberry podemos instalar ...
+* a) Una versión reducida de Windows  10
+b) Una versión completa de Windows  10
+c) Una versión completa de Windows  XP
+d) Una versión completa de Windows  11
+
+4. El escritorio de Raspberry es ...
+* a) Pixel, un moderno y eficiente escritorio tipo Linux
+b) Una pantalla negra con letras verdes
+c) Dificil de usar
+d) en 3D
+
+
+5. Para configurar Raspberry desde consola (terminal) usamos ...
+* a) sudo raspi-config
+b) raspiConf
+c) sudo config
+d) sudo configure
