@@ -410,3 +410,6 @@ Pulsamos instalar y nos dirá si necesitamos instalar algunos complementos de lo
 
 ![Add-ons de vídeo](./images/MisAddons.jpg)
 
+
+Ahora a disfrutar de nuestro reproductor multimedia
+
