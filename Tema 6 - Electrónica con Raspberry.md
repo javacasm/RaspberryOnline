@@ -56,9 +56,12 @@ Las versiones de 40 pines
 
 ![GPIO de 40 pines](./images/pi2GPIO.jpg)
 
-### Librerías
+## Manejando los pines de 
 
-Existen varias librerías que nos facilitarán el utilizarlos (todas usand lenguaje python como base). Nosotros veremos 5 de ellas.
+
+## Librerías
+
+Existen otras librerías que nos facilitarán el utilizarlos (todas usan lenguaje python como base). Nosotros veremos 5 de ellas.
 
 * gpiozero soportada por Raspberry Pi y de la que podemos ver un excelente tutorial [aquí](https://projects.raspberrypi.org/en/projects/physical-computing)
 * Shell (línea de comandos)
