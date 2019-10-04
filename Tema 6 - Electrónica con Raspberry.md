@@ -56,12 +56,274 @@ Las versiones de 40 pines
 
 ![GPIO de 40 pines](./images/pi2GPIO.jpg)
 
-## Manejando los pines de 
+## Manejo basico de los pines
+
+### Encendiendo un led
+
+Necesitaremos un Led y una resistencia de 220Ohmios (o 330) 
+Vamos conectarlos de la siguiente manera
+
+![Led](https://projects-static.raspberrypi.org/projects/physical-computing/225a16929b40a969453040649df87044fc67e670/en/images/led-gpio17.png)
+
+El programa es muy sencillo
+
+		from gpiozero import LED
+		from time import sleep
+
+		red = LED(17)
+
+		while True:
+			red.on()
+			sleep(1)
+			red.off()
+			sleep(1)
+
+### Usando botones/pulsadores
+
+Vamos ahora a conectar un botón y a detectar cuando está pulsado
+
+![Botón](https://projects-static.raspberrypi.org/projects/physical-computing/225a16929b40a969453040649df87044fc67e670/en/images/button.png)
+
+Y el programa es muy sencillo también
+
+		from gpiozero import Button
+		button = Button(2)
+
+		button.wait_for_press() ## El programa espera hasta que se pulse el boton
+		print('Me has pulsado')
 
 
-## Librerías
+Fácilmente podemos mezclalos los dos, haciendo que el led se encienda durante un tiempo cuando pulsemos
 
-Existen otras librerías que nos facilitarán el utilizarlos (todas usan lenguaje python como base). Nosotros veremos 5 de ellas.
+		from gpiozero import LED, Button
+		from time import sleep
+
+		led = LED(17)
+		button = Button(2)
+
+		button.wait_for_press()
+		led.on()
+		sleep(3)
+		led.off()
+
+Ya tenmos todo lo necesario para montar un semáforo ¿te animas?
+
+## Controlando motores
+
+Para controlar motores vamos a necesitar una placa que se encargue de manejar la suficiente potencia.
+Vamos a usar un módulo muy utilizado llamado L298
+
+![Driver de motores L298](./images/l298-dual-h-bridge-motor-driver.jpg)
+
+Usaremos un par de sencillos motores DC
+
+![Motor DC de tipo TT](./images/motor_tt.jpg)
+
+Y también necesitaremos una alimentación externa para los motores, que puede ser unas pilas o un batería con el 
+
+Conectaremos los motores de la siguiente manera
+
+![Conexión motores a L298](./images/wires-in-board.jpg)
+
+Y la batería de la siguiente forma
+
+![Conexión de la batería](./images/battery-holder.jpg)
+
+Y ahora conectaremos los pines de control de la siguiente forma
+
+![Conexión de los pines de control](./images/gpio-board.jpg)
+
+|GPIO|L298
+|---|---
+|7| In1
+|8| In2
+|9|In3
+|10|In4
+|GND|GND
+
+Veamos ahora un sencillo ejemplo de control
+
+		from gpiozero import Motor
+		from time import sleep
+
+		motorL = Motor(forward = 7, backward = 8)
+		motorR = Motor(forward = 9, backward = 10)
+
+		while True:
+			motorL.forward()
+			motorR.forward()
+			sleep(5)
+			motorL.backward()
+			motorR.backward()
+			sleep(5)
+
+Y nuestrs motores deben de moverse hacia adelante y hacia atrás
+
+Si lo que queremos es montar un robot con esos 2 motores podemos hacerlo de una manera más sencilla usando este ejemplo
+
+		from gpiozero import Robot
+		from time import sleep
+		robby = Robot(left=(7,8), right=(9,10))
+		robby.forward(0.4)
+		sleep(5)
+		robby.right(0.4)
+		sleep(5)
+		robby.stop()
+		
+Ahora ya podemos hacer robót como estos
+
+[zerobot](https://www.thingiverse.com/thing:2352440)
+
+![zerobot](https://cdn.thingiverse.com/renders/a4/48/26/89/b2/c200276c9a8a68e2538f83dc438e61f1_preview_featured.JPG)
+
+[Smart Zero](https://www.thingiverse.com/thing:2727285)
+
+![Smart zero](https://cdn.thingiverse.com/renders/b2/e2/fa/57/54/8580f06ab82a9cf5ed57c2194e3115c5_preview_featured.JPG)
+
+[Formula Pi](https://www.formulapi.com/) Capaces de buscar su propio camino usando la cámara com podemos ver en [este vídeo](https://youtu.be/2PU-UDYm2Xw?t=40)
+
+![Formula Pi](https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2016/07/PiBorg-Formula-Pi-Raspberry-Pi-Self-driving-Toy-Race-Car-image-3-630x473.jpg)
+
+## Controlando un servomotor
+
+Un servomotor es un tipo de motor que sólo realiza movimientos angulares entre 0 y 180 grados (existen algunos modelos que se llaman trucados o de rotación continua pero no vamos a tratar aquí)
+Una de las grandes ventajas de los servos es que incluyen su propio contolador con lo que sólo necesitamos alimentarlos y una señal de control
+
+![Servomotor](./images/Micro-servo.jpg)
+
+Podremos controlarlos de las patillas GPIO12, GPIO13, GPIO18, GPIO19
+
+![Pines PWM](./images/Raspberry_pi_3_PWMpins.png)
+
+|GPIO|Servo
+|---|---
+|18|Naranja
+|5V|Rojo
+|GND|Negro
+
+El código es muy sencillo. Este ejemplo va desde el mínimo, al punto medio y luego al máximo
+
+	from gpiozero import Servo
+	from time import sleep
+
+	servo = Servo(17)
+
+	while True:
+		servo.min()
+		sleep(2)
+		servo.mid()
+		sleep(2)
+		servo.max()
+		sleep(2)
+
+Conectaremos
+
+## Controlando una pantalla LCD de tipo I2C
+
+Vamos a ver cómo conectar una pantalla LCD de tipo LCD de las que se suelen tener las máquinas de vending
+
+![Pantalla LCD de tipo I2C](./images/lcd-i2c.jpg)
+
+En primar lugar tenemos que activar el bus I2C en la pestaña de configuración de interfaces
+
+![raspi-config](http://www.circuitbasics.com/wp-content/uploads/2016/02/Raspberry-Pi-LCD-I2C-Connections-sudo-raspi-config.png)
+
+![Enable I2C](http://www.circuitbasics.com/wp-content/uploads/2016/02/Raspberry-Pi-LCD-I2C-Connections-sudo-raspi-config-enable-i2c.png)
+
+Ahora instalaremos herramientas i2c
+
+    sudo apt-get install i2c-tools
+
+Y una librería python
+
+     sudo apt-get install python-smbus
+
+Conectamos el LCD
+
+![Conexion LCD](./images/2.LCD_I2C_bb.png)
+
+|GPIO|LCD|
+|---|---
+|SDA(3)|SDA
+|SCL(5)|SCL
+|3.3V|Vcc
+|GND|GND
+
+Y ejecutamos la herramienta para detectar dispositivos i2C y su correspondiente dirección (normalmente el fabricante nos proporciona este dato)
+
+![Instalacion I2C](./images/Instalacion_I2C.png)
+
+Vemos que se ha detectado el LCD en la dirección 0x27 (en nuestro caso podemos obtener otro valor como 0x30 o 0x3F)
+
+Usaremos el codigo de [I2C_LCD_driver.py](./codigo/I2C_LCD_driver.py)
+
+Para probar a ver si funciona todo
+
+    import I2C_LCD_driver
+    from time import *
+
+    mylcd = I2C_LCD_driver.lcd()
+
+    mylcd.lcd_display_string("Hola LCD!", 1)
+
+Un ejemplo sencillo para hacer que parpadee un texto
+
+
+    import time
+    import I2C_LCD_driver
+    mylcd = I2C_LCD_driver.lcd()
+
+    while True:
+        mylcd.lcd_display_string(u"TEXTO PARPADEANTE")
+        time.sleep(1)
+        mylcd.lcd_clear()
+        time.sleep(1)
+
+
+Mostrar la fecha y la hora
+
+      import I2C_LCD_driver
+      import time
+      mylcd = I2C_LCD_driver.lcd()
+
+
+      while True:
+          mylcd.lcd_display_string("Hora: %s" %time.strftime("%H:%M:%S"), 1)
+
+          mylcd.lcd_display_string("Fecha: %s" %time.strftime("%d/%m/%Y"), 2)
+
+
+Para mostrar la dirección IP, algo muy útil si no tenemos conectada otra pantalla
+
+    import I2C_LCD_driver
+    import socket
+    import fcntl
+    import struct
+
+    mylcd = I2C_LCD_driver.lcd()
+
+    def get_ip_address(ifname):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        return socket.inet_ntoa(fcntl.ioctl(
+            s.fileno(),
+            0x8915,
+            struct.pack('256s', ifname[:15])
+        )[20:24])
+
+    mylcd.lcd_display_string("IP Address:", 1)
+
+    mylcd.lcd_display_string(get_ip_address('eth0'), 2)
+
+
+Más ejemplos en [la fuente original](http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/)		
+
+Más [proyectos](http://projects.raspberrypi.org) e [información](https://gpiozero.readthedocs.io/en/stable/installing.html) sobre electrónica
+
+## Otras Librerías
+
+Existen otras librerías que nos facilitarán el acceso a los GPIO (todas usan lenguaje python como base). Nosotros veremos 5 de ellas por motivos históricos y porque muchos proyectos las usan y conviene saber utilizalas.
+
+Para probarlas re-haremos algunos de los ejemplos ya vistos con estas librerías
 
 * gpiozero soportada por Raspberry Pi y de la que podemos ver un excelente tutorial [aquí](https://projects.raspberrypi.org/en/projects/physical-computing)
 * Shell (línea de comandos)
