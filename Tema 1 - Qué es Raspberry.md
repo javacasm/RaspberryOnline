@@ -51,7 +51,7 @@ Utiliza un diseño avanzado, como podemos ver en la imagen donde se ve que se ha
 
 Actualmente existen varios formatos, vamos a ver los más usados:
 
-* La versión más actual a día de hoy (2 de Octubre de 2019) es la [Versión 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) (1.5GHz quad core hasta 4Gb, USB 3, Gigabit, Wifi y bluetooth)
+* La versión más actual a día de hoy (7 de Octubre de 2019) es la [Versión 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) (1.5GHz quad core hasta 4Gb, USB 3, Gigabit, Wifi y bluetooth)
 
 ![Raspberry Pi versión 4](./images/Raspberry-Pi-4.jpg)
 
