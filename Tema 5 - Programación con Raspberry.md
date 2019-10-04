@@ -82,6 +82,14 @@ Antes de poder utilizarla tenemos que activarla
 
 ![Configuración para activar la cámara](./images/activaCamara.png)
 
+Necesitamos reiniciar para que arranquen adecuadamente los drivers.
+
+Podemos probarla con este comando
+
+        raspistill -v -o test.jpg
+        
+Que mostrará lo que enfoca la cámara durante 5 segundos y luego guardará una imagen en el fichero test.jpg
+
 
 Tenemos 2 aplicaciones para usar la cámara
 
@@ -387,3 +395,89 @@ print 'Se encontrado '+str(contador)+' veces';
 ```
 
 **Ejercicio**: haz que el usuario pueda introducir la cadena donde buscar y el carácter
+
+## Python y la cámara
+
+Veamos un par de sencillos ejemplos sobre cómo utilizar la cámara de python
+
+Empecemos mostrando la previsualización y luego guardando una imagen
+
+		# Ejemplo basico de previsualizacion y captura con la camara
+		# captest_basico_imagen.py
+		# Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
+
+		from picamera import PiCamera
+		from time import sleep
+
+		camera = PiCamera()
+
+		camera.start_preview() # muestra la previsualizacion
+		sleep(5) # espera 5 segundos
+		camera.capture('/home/pi/Desktop/image.jpg') # guarda la imagen
+		camera.stop_preview() # cierra la previsualizacion
+
+Si lo que queremos es grabar vídeo, el código sería el siguiente
+
+# Ejemplo basico de previsualizacion y captura de video con la camara
+# captest_basico_video.py
+# Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
+
+		from picamera import PiCamera
+		from time import sleep
+
+		camera = PiCamera()
+
+		camera.start_preview()
+		camera.start_recording('/home/pi/Desktop/video.h264')
+		sleep(5)
+		camera.stop_recording()
+		camera.stop_preview()
+
+Si entrar en muchos detalles, vamos a ver un sencillo [ejemplo](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/T5_camara.py) de cómo integrar la cámara dentro de nuestro programa python
+
+
+		import picamera
+		import pygame
+		import io
+
+		# Init pygame 
+		pygame.init()
+		screen = pygame.display.set_mode((0,0))
+
+		# Init camera
+		camera = picamera.PiCamera()
+		camera.resolution = (1280, 720)
+		camera.crop = (0.0, 0.0, 1.0, 1.0)
+
+		x = (screen.get_width() - camera.resolution[0]) / 2
+		y = (screen.get_height() - camera.resolution[1]) / 2
+
+		# Init buffer
+		rgb = bytearray(camera.resolution[0] * camera.resolution[1] * 3)
+
+		# Main loop
+		exitFlag = True
+		while(exitFlag):
+			for event in pygame.event.get():
+				if(event.type is pygame.MOUSEBUTTONDOWN or 
+				   event.type is pygame.QUIT):
+				    exitFlag = False
+
+			stream = io.BytesIO()
+			camera.capture(stream, use_video_port=True, format='rgb')
+			stream.seek(0)
+			stream.readinto(rgb)
+			stream.close()
+			img = pygame.image.frombuffer(rgb[0:
+				  (camera.resolution[0] * camera.resolution[1] * 3)],
+				   camera.resolution, 'RGB')
+
+			screen.fill(0)
+			if img:
+				screen.blit(img, (x,y))
+
+			pygame.display.update()
+
+		camera.close()
+		pygame.display.quit()
+
