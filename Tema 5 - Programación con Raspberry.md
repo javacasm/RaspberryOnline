@@ -417,10 +417,6 @@ Empecemos mostrando la previsualización y luego guardando una imagen
 
 Si lo que queremos es grabar vídeo, el código sería el siguiente
 
-[Ejemplo basico de previsualizacion y captura de video con la camara](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/captest_basico_video.py) 
- 
- Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
-
 		from picamera import PiCamera
 		from time import sleep
 
@@ -431,6 +427,8 @@ Si lo que queremos es grabar vídeo, el código sería el siguiente
 		sleep(5)
 		camera.stop_recording()
 		camera.stop_preview()
+
+Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
 
 Si entrar en muchos detalles, vamos a ver un sencillo [ejemplo](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/T5_camara.py) de cómo integrar la cámara dentro de nuestro programa python
 
