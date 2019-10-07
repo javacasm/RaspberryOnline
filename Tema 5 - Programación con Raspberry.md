@@ -28,7 +28,7 @@ Principalmente están pensados para facilitar la instalación de los entornos, q
 
 Es un entorno de programación gráfico que nos permite hacer programas usando bloques.
 
-Podemos probarlo [online](https://scratch.mit.edu/projects/editor/)
+Podemos probarlo [online](https://scratch.mit.edu/projects/editor/), y además nuestra Raspberry incluye diferentes versiones en forma de aplicaciones para las versiones 1, 2 y 3
 
 ![scratch](./images/scratch.png)
 
@@ -36,11 +36,10 @@ Podemos probarlo [online](https://scratch.mit.edu/projects/editor/)
 
 Está pensado para enseñar a programar sin la complejidad de la sintaxis.
 
-Otros similares
-
-* [Snap!](snap.berkeley.edu)
 
 * [Code.org](Code.org)
+
+Sin duda para empezar a programar lo mejor es empezar por Code
 
 ![code](./images/code.png)
 
@@ -181,7 +180,7 @@ Para ver todas las opciones disponibles podemos hacer
 
 	$raspivid | less
 
-Para una documentación más detallada sobre las opciones del ejecutable se puede consultar el siguiente [enlace](https://github.com/raspberrypi/userland/blob/master/host_applications/linux/apps/raspicam/RaspiCamDocs.odt)
+Para una documentación más detallada sobre las opciones del ejecutable se puede consultar el siguiente [enlace](https://www.raspberrypi.org/documentation/raspbian/applications/camera.md)
 
 ### Webcam
 
@@ -323,7 +322,7 @@ Veamos algunos ejemplos
 
 ## Operaciones numéricas y petición de datos al usuario
 
-[Código de Suma](./codigo/suma.py)
+[Código de Suma](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/suma.py)
 
 ```python
 # Programa que realiza la suma de dos valores
@@ -337,7 +336,7 @@ print (suma);
 
 ### Sentencias de control condicionales
 
-[Código de Bisiesto](./codigo/bisiesto.py)
+[Código de Bisiesto](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/bisiesto.py)
 
 ```python
 # Programa que determina si un año es o no bisiesto
@@ -349,7 +348,7 @@ else:
   print 'No es bisiesto!!';
 ```
 
-[Código de días por mes](./codigo/diasMes.py)
+[Código de días por mes](.https://github.com/javacasm/RaspberryOnline/blob/master/codigo/diasMes.py)
 
 ```python
 # Nos da los dias que tiene el mes seleccionado
@@ -377,7 +376,7 @@ else:
 
 ### Sentencias de control de repetición
 
-[Código de Buscando Caracteres](./codigo/buscaCaracter.py)
+[Código de Buscando Caracteres](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/buscaCaracter.py)
 
 ```python
 # Cuenta las veces que se repite un caracter en una palabra
@@ -418,9 +417,9 @@ Empecemos mostrando la previsualización y luego guardando una imagen
 
 Si lo que queremos es grabar vídeo, el código sería el siguiente
 
-# Ejemplo basico de previsualizacion y captura de video con la camara
-# captest_basico_video.py
-# Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
+[Ejemplo basico de previsualizacion y captura de video con la camara](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/captest_basico_video.py) 
+ 
+ Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
 
 		from picamera import PiCamera
 		from time import sleep
