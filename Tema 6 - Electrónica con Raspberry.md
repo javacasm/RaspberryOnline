@@ -9,7 +9,6 @@ Trabajar con electrónica es siempre algo delicado pero mucho más cuando trabaj
 * No existe protección en los terminales, con lo que es muy, muy sencillo quemar la placa.
 * Cuidado con colocar la placa sobre un instrumento o superficie metálica. Mejor usar una caja
 * Cuidado con los dispositivos que conectamos, pudieran demandar más potencia de la que le puede dar
-
 * Antes de realizar cualquier tipo de conexión en los conectores o pines debemos de tener siempre la precaución de tener desconectada la alimentación de la Raspberry Pi.
 * Evitaremos derivaciones eléctricas o cortos .
 * Conviene recordar que los pines de la CPU de la placa están conectados directamente a los diferentes conectores y pines, con lo que cualquier cosa que hagamos sobre los pines la estamos haciendo directamente sobre la CPU.
@@ -43,7 +42,7 @@ Hay que tener cuidado con no equivocarse. Para evitar errores podemos usar una e
 
 O esta otra versión del gran @pighixxx con los diferentes etiquetados
 
-![Etiquetas ping](https://pbs.twimg.com/media/DACXWfzXkAE--mT.jpg)
+![Etiquetas de @pighixxx](https://pbs.twimg.com/media/DACXWfzXkAE--mT.jpg)
 
 
 [Vídeo sobre etiquetas en los GPIO de Raspberry](https://youtu.be/9UiZ7m6UacM)
@@ -51,10 +50,14 @@ O esta otra versión del gran @pighixxx con los diferentes etiquetados
 Las distintas versiones de la Raspberry tienen algunos pines distintos
 
 ![GPIO para la versión 2](./images/GPIOV2.png)
-
-Las versiones de 40 pines
+	
+Las versiones de 40 pines hasta la Raspberry pi 3+
 
 ![GPIO de 40 pines](./images/pi2GPIO.jpg)
+
+Los GPIOs para la Raspberry pi 4
+
+![GPIOs para la Raspberry pi 4](./images/GPIO4.webp)
 
 ## Manejo basico de los pines
 
@@ -63,7 +66,7 @@ Las versiones de 40 pines
 Necesitaremos un Led y una resistencia de 220Ohmios (o 330) 
 Vamos conectarlos de la siguiente manera
 
-![Led](https://projects-static.raspberrypi.org/projects/physical-computing/225a16929b40a969453040649df87044fc67e670/en/images/led-gpio17.png)
+![Led](./images/led-gpio17.png)
 
 El programa es muy sencillo
 
@@ -82,7 +85,7 @@ El programa es muy sencillo
 
 Vamos ahora a conectar un botón y a detectar cuando está pulsado
 
-![Botón](https://projects-static.raspberrypi.org/projects/physical-computing/225a16929b40a969453040649df87044fc67e670/en/images/button.png)
+![Botón](./images/button.png)
 
 Y el programa es muy sencillo también
 
@@ -106,7 +109,7 @@ Fácilmente podemos mezclalos los dos, haciendo que el led se encienda durante u
 		sleep(3)
 		led.off()
 
-Ya tenmos todo lo necesario para montar un semáforo ¿te animas?
+Ya tenemos todo lo necesario para montar un semáforo ¿te animas?
 
 ## Controlando motores
 
@@ -133,13 +136,7 @@ Y ahora conectaremos los pines de control de la siguiente forma
 
 ![Conexión de los pines de control](./images/gpio-board.jpg)
 
-|GPIO|L298
-|---|---
-|7| In1
-|8| In2
-|9|In3
-|10|In4
-|GND|GND
+ Conectaremos 7 -> In1,  8 -> In2,  9 -> In3, 10 -> In4 y  GND -> GND
 
 Veamos ahora un sencillo ejemplo de control
 
@@ -195,18 +192,14 @@ Podremos controlarlos de las patillas GPIO12, GPIO13, GPIO18, GPIO19
 
 ![Pines PWM](./images/Raspberry_pi_3_PWMpins.png)
 
-|GPIO|Servo
-|---|---
-|18|Naranja
-|5V|Rojo
-|GND|Negro
+Conectaremos 18 -> Naranja, 5V -> Rojo, GND -> Marrón
 
 El código es muy sencillo. Este ejemplo va desde el mínimo, al punto medio y luego al máximo
 
 	from gpiozero import Servo
 	from time import sleep
 
-	servo = Servo(17)
+	servo = Servo(18)
 
 	while True:
 		servo.min()
@@ -242,12 +235,7 @@ Conectamos el LCD
 
 ![Conexion LCD](./images/2.LCD_I2C_bb.png)
 
-|GPIO|LCD|
-|---|---
-|SDA(3)|SDA
-|SCL(5)|SCL
-|3.3V|Vcc
-|GND|GND
+Conectaremos SDA(3) -> SDA, SCL(5) -> SCL, 3.3V -> Vcc y  GND -> GND
 
 Y ejecutamos la herramienta para detectar dispositivos i2C y su correspondiente dirección (normalmente el fabricante nos proporciona este dato)
 
@@ -255,7 +243,7 @@ Y ejecutamos la herramienta para detectar dispositivos i2C y su correspondiente 
 
 Vemos que se ha detectado el LCD en la dirección 0x27 (en nuestro caso podemos obtener otro valor como 0x30 o 0x3F)
 
-Usaremos el codigo de [I2C_LCD_driver.py](./codigo/I2C_LCD_driver.py)
+Usaremos el codigo de [I2C_LCD_driver.py](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/I2C_LCD_driver.py)
 
 Para probar a ver si funciona todo
 
@@ -321,11 +309,10 @@ Más [proyectos](http://projects.raspberrypi.org) e [información](https://gpioz
 
 ## Otras Librerías
 
-Existen otras librerías que nos facilitarán el acceso a los GPIO (todas usan lenguaje python como base). Nosotros veremos 5 de ellas por motivos históricos y porque muchos proyectos las usan y conviene saber utilizalas.
+Existen otras librerías que nos facilitarán el acceso a los GPIO (todas usan lenguaje python como base). Nosotros veremos algunas de ellas por motivos históricos y porque muchos proyectos las usan y conviene saber utilizalas.
 
 Para probarlas re-haremos algunos de los ejemplos ya vistos con estas librerías
 
-* gpiozero soportada por Raspberry Pi y de la que podemos ver un excelente tutorial [aquí](https://projects.raspberrypi.org/en/projects/physical-computing)
 * Shell (línea de comandos)
 * Rpi. GPIO
 * wiringPi (Gordon Henderson wiringpi.com)
@@ -463,7 +450,7 @@ A la salida de este transistor podemos conectar un relé para obtener aún más 
 
 ### Leyendo valores analógicos
 
-Para leer valores analógicos usaremos electrónica externa, com pueden se [esta placa](http://www.abelectronics.co.uk/products/3/Raspberry-Pi/17/) o [esta otra](http://www.adafruit.com/products/1085), ambas de 16 bits. El [montaje es sencillo](http://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi)
+Para leer valores analógicos usaremos electrónica externa, com pueden se [esta placa](https://www.abelectronics.co.uk/p/65/adc-differential-pi-raspberry-pi-analogue-to-digital-converter) o [esta otra](http://www.adafruit.com/products/1085), ambas de 16 bits. El [montaje es sencillo](http://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi)
 
 ![ADC](./images/adc.png)
 
@@ -493,14 +480,12 @@ Raspberry.
 
 ![Conversores de niveles (shifter)](./images/shifter.png)
 
-Para identificar más fácilmente los pines podemos usar una etiqueta
-
-![etiqueta](./images/etiqueta.png)
+Para identificar más fácilmente los pines recordad que podemos usar el truco de las etiquetas del que ya hablamos
 
 
 ## Placas GPIO
 
-Existen muchas placas que facilitan la conexión de electrónica
+Existen muchas placas que facilitan la conexión de electrónica.
 
 [Vídeo: Cómo conectar shields a RaspBerry Pi](https://www.youtube.com/watch?v=J9ZolkLrbdg)
 
@@ -523,7 +508,7 @@ Son simples adaptadores que nos facilitan la vida permitiendo conectar de manera
 
 ### PiPlate
 
-![piplate](./images/piplate.png)
+![PiPlate](./images/piplate.png)
 
 Se trata de una placa de prototipo especialmente adaptada al tamaño de la Raspberry y que nos permite acceder de forma sencilla a los pines por nombre y funcionalidad.
 
@@ -532,7 +517,7 @@ Se trata de una placa de prototipo especialmente adaptada al tamaño de la Raspb
 
 ### PiFace
 
-![piface](./images/piface.png)
+![PiFace](./images/piface.png)
 
 * Tiene un fin claramente educativo,
 * Incluye diferentes dispositivos
@@ -540,23 +525,25 @@ Se trata de una placa de prototipo especialmente adaptada al tamaño de la Raspb
 * 2 relés para activar cargas de potencia y
 * 4 pulsadores conectados a otras tantas entradas
 
-![esquemapiface](./images/esquemapiface.png)
+![Esquema de PiFace](./images/esquemapiface.png)
 
 ### Slice of I/O
 
-![slice](./images/slice.png)
+![Slice](./images/slice.png)
 
-Se trata de una p laca sencilla que nos permite acceder a 8 entradas y otras tantas salidas con la seguridad de que existe una electrónica que protege a nuestra RaspBerry
+Se trata de una placa sencilla que nos permite acceder a 8 entradas y otras tantas salidas con la seguridad de que existe una electrónica que protege a nuestra RaspBerry
 
 ### Gertboard
 
-![gertboard](./images/gertboard.png)
+![Gertboard](./images/gertboard.png)
 
 Es una placa de desarrollo con una enorme cantidad de complementos, como son controladores de motores, ADC, DAC, 12 leds, 3 pulsadores y hasta un microcontrolador ATMega (similar a Arduino)
 
 ### RaspiRobot
 
-![Raspirobot](./images/raspirobot.png)
+![RaspiRobot](./images/raspirobot.png)
+
+Esta placa nos permite controlar un típico robot de 2 motores de manera muy sencillo. 
 
 * El manejo de motores es mucho más complejo que el manejo de leds.
 * La programación es exactamente la misma,
@@ -568,7 +555,7 @@ Es una placa de desarrollo con una enorme cantidad de complementos, como son con
 	* En caso de forzar la electrónica de alimentación de nuestra Raspberry a dar una mayor potencia podríamos quemarla.
 	* El funcionamiento de los motores hace que estos generen al acelerar unas corrientes de inducción de sentido opuesto a las que les aplicamos para funcionar y que de no ser suprimidas podrían dañar la electrónica a la que están conectados.
 
-En la [web de raspbirobot](https://github.com/simonmonk/raspirobotboard/wiki) vemos instrucciones de montaje
+En la [web de RaspiRobot](https://github.com/simonmonk/raspirobotboard/wiki) vemos instrucciones de montaje
 
 [Vídeo: Raspirobot - Controlando robots con Raspberry](https://youtu.be/FjjP8007DXA?list=PLDxBiw1MlK6SqyPGhhox9WlsximiNrcgK)
 
@@ -585,11 +572,15 @@ Descargamos la librería
 
 	wget https://github.com/simonmonk/raspirobotboard/archive/master.zip
 
+La descomprimimos conviene
+
+	unzip master.zip
+	
 y la instalamos
 
 	sudo python setup.py install
 
-Un programa podría ser
+Un programa sencillo podría ser
 
 		from raspirobotboard import *
 		rr = RaspiRobot() # creamos el objeto
@@ -606,19 +597,14 @@ Un programa podría ser
 
 ### Steppers: motores paso a paso
 
-![stepper](./images/stepper.png)
+![Stepper](./images/stepper.png)
 
 Los motores paso a paso son motores que nos permiten una gran precisión de giro, pudiendo determinar su moviendo en grados.
 
 Vamos a ver cómo usar el motor de la imagen, que tiene 4 bobinas. La placa de control es muy sencilla y necesita de 4 pines para controlarla (en realidad la placa sólo transforma la salida de los pines de raspberry en una señal de la potencia que necesita el motor)
 
-Veamos como conectarla
-	5V (P1-02)
-	GND (P1-06)
-	Inp1 (P1-18)
-	Inp2 (P1-22)
-	Inp3 (P1-24)
-	Inp4 (P1-26)
+Veamos como conectarla usando 5V y GND y los pines 24,25,8 y 7
+
 
 Vamos a ver ahora la programación.
 
@@ -700,7 +686,9 @@ Y para ejecutarlo
 
 
 
-### Motores
+### Motores y servos
+
+A veces no interesa controlar varios motores y servos desde una misma placa. 
 
 [Servo desde python](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-8-using-a-servo-motor?view=all)
 
@@ -712,15 +700,15 @@ Y para ejecutarlo
 
 ## Sensores
 
-[Sensores de temperatura digitales](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing?view=all)
+Veamos como podemos conectar [sensores de temperatura digitales](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing?view=all)
 
 ![Sensores de temperatura](https://learn.adafruit.com/system/assets/assets/000/003/775/medium800/learn_raspberry_pi_summary.jpg?1396801585)
 
-## Algunos enlaces
+### Algunos enlaces
 
-Veamos algunos enlaces interesantes sobre tutoriales de electrónica
-*  http://www.sc.ehu.es/sbweb/electronica/elec_basic
-a/default.htm
+Por si te interesa profundicar veamos algunos enlaces interesantes sobre tutoriales de electrónica
+
+*  http://www.sc.ehu.es/sbweb/electronica/elec_basica/default.htm
 *  http://www.tutoelectro.com/
 *  http://www.electronicafacil.net/circuitos/
 *  http://www.areatecnologia.com/
@@ -762,7 +750,7 @@ Se trata de una placa compatible con Arduino que se conecta directamente a los G
 
 Más información en [este](http://www.internetdelascosas.cl/2013/09/11/alamode-un-arduino-para-raspberry-pi/) y [este enlace]( http://makezine.com/2012/12/12/new-product-alamode-arduino-compatible-shield-for-raspberry-pi/)
 
-![alamode](./images/alamode-01-150x150.jpg)
+![Alamode](./images/alamode-01-150x150.jpg)
 
 #### Paperduino pi
 
@@ -779,6 +767,4 @@ Más información en [este](http://www.internetdelascosas.cl/2013/09/11/alamode-
 [Esta placa](http://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge) nos permite crear una especie de emulador de Arduino, es decir, ejecutar proyectos de arduino (ino o pde) en la raspberry. Además tiene  conectores estándar de Arduino lo que nos permite conectar shield de arduino.
 Hay que tener cuidado con los shields que conectamos puesto que podríamos tener problemas si estos funcionan en 5v y
 
-### Instalando IDEs en Raspberry
 
-Desde hace untiempo es posible instalar y usar el [IDE de Arduino](https://blogspot.tenettech.com/arduino-ide-running-on-raspberry-pi.html) y el de [Processing en la Raspberry Pi](http://cagewebdev.com/index.php/raspberry-pi-running-processing-on-your-raspi/). En los enlaces se puede ver el proceso de instalación.
