@@ -1,4 +1,4 @@
-SFAQ="RasPi FAQ - Preguntas Frecuentas.pdf"
+SFAQ="RasPi FAQ - Preguntas Frecuentas.docx"
 FFAQ="RasPi FAQ - Preguntas Frecuentas.md"
 F1="Tema 1 - Qué es Raspberry.md"
 S1="Tema 1 - Qué es Raspberry.docx"
