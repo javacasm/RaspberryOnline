@@ -8,17 +8,17 @@
 
 * ¿De verdad cuesta 35$?
 
-	La placa sí, pero por si misma no es más que un pisapapeles Geek
+	La placa sí, pero por si misma no es más que un pisapapeles Geek, necesitamos cómo mínimo la tarjeta SD y la alimentación.
 
 * ¿Cómo la alimento?
 
-	Por USB Micro (como los móviles) con 5v y al menos 1A (mejor 2A)
+	Por USB Micro (como los móviles) con 5v y al menos 2A (mejor 3A)
 
 * ¿Puede funcionar con pilas?
 
 	Depende de las pilas, con una batería externa (como las de los móviles) Sí
 
-* ¿Qué significan las luces?
+* ¿Qué significan las luces? En las versiones modernas (2 en adelante), hay un led Rojo de alimentación y uno verde de actividad del sistema. En la  V1
 
 		PWR 	5V alimentación ok
 		OK 	Acceso a la SD
@@ -37,11 +37,19 @@
 
 * ¿Se rompe si le quito la alimentación?
 
-	No debería pero pudiera ocurrir si se están escribiendo muchos archivos (es un tema de probabilidad)
+	No debería romperna nada, pero pudiera ocurrir si se están escribiendo muchos archivos (es un tema de probabilidad) algunos queden corruptos y si son importantes para el sistema no arrancaría
 
 * ¿Qué versión tengo?
 
-	Podemos saber la versión de Raspberry que tenemos usando el siguiente comando
+	Podemos saber la versión de Raspberry que tenemos usando el siguiente comando en las versiones más modernas
+	
+		cat /sys/firmware/devicetree/base/model;echo
+		
+	Obtendremos ésto en una Raspi 3
+	
+		Raspberry Pi 3 Model B Rev 1.2
+		
+	También podemos usar ésto, que nos dará información sobre los procesadores
 
 		cat /proc/cpuinfo
 
@@ -72,15 +80,15 @@
 
 * ¿Puedo encender y apagar un led?
 
-	Sí, pero con cuidado
+	Sí, pero con cuidado, un cortocircuito en la placa puede estropearla definitivamente.
 
 * ¿Puede controlar un motor?
 
-	No directamente, sí con una plaquita
+	No directamente, sí con una plaquita que incluya transistores o drivers
 
 * ¿Qué necesito para hacer un robot?
 
-	Una placa controladora, y motores ...
+	Una placa controladora, motores, baterías, sensores ...
 
 
 ## Administrando (¡es linux!)
