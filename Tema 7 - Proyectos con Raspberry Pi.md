@@ -1,5 +1,9 @@
 # Tema 7 - Proyectos con Raspberry Pi
 
+## Jugando
+
+Retropie
+
 ## Tuneando
 
 Ejemplos mostrar la temperatura en la barra de tareas
@@ -37,11 +41,21 @@ Si vas a utilizar las raspberry para hacer montajes electrónicos en el aula te 
 
 Algo así:
 
-https://cdn-learn.adafruit.com/assets/assets/000/000/599/medium800/raspberry_pi_ID914_LRG.jpg
+![Adaptador Cobbler para montajes electrónicos](https://cdn-learn.adafruit.com/assets/assets/000/000/599/medium800/raspberry_pi_ID914_LRG.jpg)
 
 ¿Vas a usar monitores HDMI o RGB con conversores? 
 
+En un aula de informática, donde no se va a necesitar manipular mucho con las Raspberry podemos usar carcasas de tipo Vesa, que se atornillan detrás del monitor.
+
+![Carcasa tipo Vesa](./images/CarcasaTipoVesa.jpg)
+
+![Montaje tipo Vesa](./images/MontajeVesa.jpg)
+
+También te puedes [imprimir una](https://www.thingiverse.com/search?sort=relevant&q=raspberry+vesa&type=things&dwh=455d9c56f4618e9) con una impresora 3D.
+
 Si tienes que comprar teclados y ratones mejor si son inalámbricos y con pilas recargables.
+
+Si quieres usar teclados y ratones antiguos de tipo Ps2, existen unos adaptadores muy baratos a USB que funcionan bastante bien.
 
 
 Uno de los problemas que nos encontramos en las aulas son las tarjetas SD, por que se pierden y se estropéan bastante con el uso. 
@@ -54,6 +68,7 @@ También hay quienes instalan un sistema de borrado para cada vez que se apaga s
 
 TODO: Clonar tarjetas
 TODO: Manejo de clases
+TODO: ofris para congelar usuarios
 
 
 Saludos y no dejes de comentarme como va ese aula
