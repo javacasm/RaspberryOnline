@@ -70,16 +70,22 @@ Vamos conectarlos de la siguiente manera
 
 El programa es muy sencillo
 
-		from gpiozero import LED
-		from time import sleep
+```python
+	from gpiozero import LED  # importamos los modulos necesarios
+	from time import sleep
 
-		red = LED(17)
+	red = LED(17)  	# declaramos un led conectado al GPIO 17
 
-		while True:
-			red.on()
-			sleep(1)
-			red.off()
-			sleep(1)
+	while True:  	# Repetimos en bucle para siempre
+		red.on() 	# Encendemos el led
+		sleep(1)	# Esperamos 1 segundo
+		red.off()	# Apagamos el led
+		sleep(1)	# Esperamos otro segundo
+	```
+
+[Código](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/test_led.py)
+
+Podemos utilizar el edito Thonny para ejecutar los siguientes ejemplos 
 
 ### Usando botones/pulsadores
 
@@ -89,25 +95,31 @@ Vamos ahora a conectar un botón y a detectar cuando está pulsado
 
 Y el programa es muy sencillo también
 
-		from gpiozero import Button
-		button = Button(2)
+```p	ython
+	from gpiozero import Button # importamos los modulos necesarios
 
-		button.wait_for_press() ## El programa espera hasta que se pulse el boton
-		print('Me has pulsado')
+	button = Button(2) # Declaramos pulsador conectado al GPIO 2
 
+	button.wait_for_press() # Espera hasta que se pulse el boton
+	print('Me has pulsado') # Nos informa de que se ha pulsado
+```
 
-Fácilmente podemos mezclalos los dos, haciendo que el led se encienda durante un tiempo cuando pulsemos
+[Código](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/Test_boton.py)
 
-		from gpiozero import LED, Button
-		from time import sleep
+Fácilmente podemos mezclar los dos ejemplos, haciendo que el led se encienda durante un tiempo cuando pulsemos
 
-		led = LED(17)
-		button = Button(2)
+```python
+	from gpiozero import LED, Button # importamos modulos necesarios
+	from time import sleep
 
-		button.wait_for_press()
-		led.on()
-		sleep(3)
-		led.off()
+	led = LED(17)  # declaramos un led conectado al GPIO 17
+	button = Button(2) # Declaramos un pulsador conectado al GPIO 2
+
+	button.wait_for_press()  	# Espera hasta que se pulse el boton
+	led.on()					# Encendemos el led
+	sleep(3) 					# Esperamos 3 segundos
+	led.off()					# Apagamos el led
+	```
 
 Ya tenemos todo lo necesario para montar un semáforo ¿te animas?
 
@@ -140,27 +152,35 @@ Y ahora conectaremos los pines de control de la siguiente forma
 
 Veamos ahora un sencillo ejemplo de control
 
-		from gpiozero import Motor
-		from time import sleep
+```python
+	from gpiozero import Motor  # Importamos los modulos
+	from time import sleep
 
-		motorL = Motor(forward = 7, backward = 8)
-		motorR = Motor(forward = 9, backward = 10)
+	# Motor izquierdo (L) conectando pines 7 y 8 a la placa L298
+	motorL = Motor(forward = 7, backward = 8)
+	# Motor derecho (R) conectando pines 9 y 9 a la placa L298
+	motorR = Motor(forward = 9, backward = 10)
 
-		while True:
-			motorL.forward()
-			motorR.forward()
-			sleep(5)
-			motorL.backward()
-			motorR.backward()
-			sleep(5)
+	while True:  # Bucle para siempre
+		motorL.forward()  # Motor L hacia adelante
+		motorR.forward()  # Motor R hacia adelante
+		sleep(5)		  # Esperamos 5 segundos
+		motorL.backward() # Motor L hacia atras
+		motorR.backward() # Motor R hacia atras
+		sleep(5)		  # Esperamos 5 segundos
+```
 
-Y nuestrs motores deben de moverse hacia adelante y hacia atrás
+[Código](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/Test_motores.py)
+
+Y nuestros motores deben de moverse hacia adelante y hacia atrás
 
 Si lo que queremos es montar un robot con esos 2 motores podemos hacerlo de una manera más sencilla usando este ejemplo
 
 		from gpiozero import Robot
 		from time import sleep
+		
 		robby = Robot(left=(7,8), right=(9,10))
+		
 		robby.forward(0.4)
 		sleep(5)
 		robby.right(0.4)
