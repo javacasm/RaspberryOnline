@@ -5,7 +5,7 @@
 from picamera import PiCamera
 from time import sleep
 
-camera = PiCamera()
+camera = PiCamera() # creamos el objeto camara
 
 camera.start_preview() # muestra la previsualizacion
 sleep(5) # espera 5 segundos
