@@ -33,7 +33,6 @@ Podemos probarlo [online](https://scratch.mit.edu/projects/editor/), y además n
 ![scratch](./images/scratch.png)
 
 
-
 Está pensado para enseñar a programar sin la complejidad de la sintaxis.
 
 
