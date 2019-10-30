@@ -7,8 +7,8 @@ from time import sleep
 
 camera = PiCamera()
 
-camera.start_preview()
-camera.start_recording('/home/pi/Desktop/video.h264')
-sleep(5)
-camera.stop_recording()
-camera.stop_preview()
+camera.start_preview() # comenzamos la previsualizacion
+camera.start_recording('/home/pi/Desktop/video.h264') # empezamos a grabar
+sleep(5) # esperamos 5 segundos que durara la grabación
+camera.stop_recording() # paramos la grabación
+camera.stop_preview() # paramos la previsualizacion
