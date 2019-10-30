@@ -1,5 +1,6 @@
-from gpiozero import Button
-button = Button(2)
+from gpiozero import Button # importamos los modulos necesarios
 
-button.wait_for_press() ## El programa espera hasta que se pulse el boton
-print('Me has pulsado')
+button = Button(2) # Declaramos un pulsador conectado al GPIO 2
+
+button.wait_for_press() # Espera hasta que se pulse el boton
+print('Me has pulsado') # Nos informa de que se ha pulsado
