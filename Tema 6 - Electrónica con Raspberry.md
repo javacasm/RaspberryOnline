@@ -176,17 +176,20 @@ Y nuestros motores deben de moverse hacia adelante y hacia atrás
 
 Si lo que queremos es montar un robot con esos 2 motores podemos hacerlo de una manera más sencilla usando este ejemplo
 
-		from gpiozero import Robot
-		from time import sleep
-		
-		robby = Robot(left=(7,8), right=(9,10))
-		
-		robby.forward(0.4)
-		sleep(5)
-		robby.right(0.4)
-		sleep(5)
-		robby.stop()
-		
+```python
+	from gpiozero import Robot  # importamos todo lo modulos necesarios
+	from time import sleep
+	robby = Robot(left=(7,8), right=(9,10))  # definimos las conexiones del robot
+	robby.forward(0.4) # nos movemos hacia adelante con 40% de velocidad
+	sleep(5)         # esperamos 5 segundos
+	robby.right(0.4) # nos giramos a la derecha con 40% de velocidad
+	sleep(5)         # esperamos 5 segundos
+	robby.stop() # paramos
+
+```
+
+[Código](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/test_robot.py)
+
 Ahora ya podemos hacer robót como estos
 
 [zerobot](https://www.thingiverse.com/thing:2352440)
@@ -216,20 +219,22 @@ Conectaremos 18 -> Naranja, 5V -> Rojo, GND -> Marrón
 
 El código es muy sencillo. Este ejemplo va desde el mínimo, al punto medio y luego al máximo
 
-	from gpiozero import Servo
+```python
+	from gpiozero import Servo  # importamos los modulos necesarios
 	from time import sleep
 
-	servo = Servo(18)
+	servo = Servo(18)			# definimos el servo conectado al gpio 18
 
-	while True:
-		servo.min()
-		sleep(2)
-		servo.mid()
-		sleep(2)
-		servo.max()
-		sleep(2)
+	while True:					# bucle infinito
+		servo.min()				# posicion de un extremo
+		sleep(2)				# esperamos 2 segundos
+		servo.mid()				# posicion central
+		sleep(2)				# esperamos 2 segundos
+		servo.max()				# posicion del otro extremo
+		sleep(2)				# esperamos 2 segundos
+```
 
-Conectaremos
+[Código](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/test_servo.py)
 
 ## Controlando una pantalla LCD de tipo I2C
 
@@ -245,11 +250,11 @@ En primar lugar tenemos que activar el bus I2C en la pestaña de configuración 
 
 Ahora instalaremos herramientas i2c
 
-    sudo apt-get install i2c-tools
+		sudo apt-get install i2c-tools
 
 Y una librería python
 
-     sudo apt-get install python-smbus
+		sudo apt-get install python-smbus
 
 Conectamos el LCD
 
@@ -267,6 +272,7 @@ Usaremos el codigo de [I2C_LCD_driver.py](https://github.com/javacasm/RaspberryO
 
 Para probar a ver si funciona todo
 
+```python
     import I2C_LCD_driver
     from time import *
 
@@ -274,9 +280,11 @@ Para probar a ver si funciona todo
 
     mylcd.lcd_display_string("Hola LCD!", 1)
 
+```
+
 Un ejemplo sencillo para hacer que parpadee un texto
 
-
+```python
     import time
     import I2C_LCD_driver
     mylcd = I2C_LCD_driver.lcd()
@@ -286,10 +294,11 @@ Un ejemplo sencillo para hacer que parpadee un texto
         time.sleep(1)
         mylcd.lcd_clear()
         time.sleep(1)
-
+```
 
 Mostrar la fecha y la hora
 
+```python
       import I2C_LCD_driver
       import time
       mylcd = I2C_LCD_driver.lcd()
@@ -299,10 +308,11 @@ Mostrar la fecha y la hora
           mylcd.lcd_display_string("Hora: %s" %time.strftime("%H:%M:%S"), 1)
 
           mylcd.lcd_display_string("Fecha: %s" %time.strftime("%d/%m/%Y"), 2)
-
+```
 
 Para mostrar la dirección IP, algo muy útil si no tenemos conectada otra pantalla
 
+```python
     import I2C_LCD_driver
     import socket
     import fcntl
@@ -321,7 +331,7 @@ Para mostrar la dirección IP, algo muy útil si no tenemos conectada otra panta
     mylcd.lcd_display_string("IP Address:", 1)
 
     mylcd.lcd_display_string(get_ip_address('eth0'), 2)
-
+```
 
 Más ejemplos en [la fuente original](http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/)		
 
@@ -376,6 +386,7 @@ El montaje sería
 
 Hagamos un programa que parpadea el led conectado
 
+```python
 		import time
 		# Importamos la libreria wiringpi
 		import wiringpi
@@ -394,6 +405,7 @@ Hagamos un programa que parpadea el led conectado
 			time.sleep(0.5) # esperamos medio segundo
 			io.digitalWrite(0,io.LOW) # apagamos el led
 			time.sleep(0.5) # esperamos medio segundo
+```
 
 Para ejecutar estos programas necesitamos permiso de administrador
 
@@ -405,6 +417,7 @@ Para ejecutar estos programas necesitamos permiso de administrador
 
 Usando el código
 
+```python
 		# Encendemos un led cuando se activa el pulsador
 		import wiringpi
 
@@ -420,7 +433,7 @@ Usando el código
 				io.digitalWrite(7,io.HIGH)   # Activamos el led
 			else:
 				io.digitalWrite(7,io.LOW) 	# Apagamos el led
-
+```
 
 Vemos que para leer el pulsador activamos las resistencias pull-up, es decir cuando se pulse se pone en estado bajo, esto es lo que se conoce como  lógica invertida (o negativa). Aunque puede parecer raro, es como se suele utilizar en la industria pues aporta ventajas de conexión y mantenimiento.
 
@@ -432,6 +445,7 @@ Instalamos la librería
 
 El programa que los usa
 
+```python
 		import RPi.GPIO as GPIO
 		# Usamos la numeración de los GPIO no el numero de los pines
 		GPIO.setmode(GPIO.BCM)
@@ -439,9 +453,11 @@ El programa que los usa
 		GPIO.setup(8, GPIO.OUT) # establecemos el GPIO 8 como salida
 		input_value = GPIO.input(7) # recuperamos el valor de entreda
 		GPIO.output(8, True) # establecemos la salida en alto
+```
 
 O este ejemplo más complejo
 
+```python
 		import RPi.GPIO as GPIO
 		import time
 		# Usamos la posición en el conector
@@ -457,7 +473,7 @@ O este ejemplo más complejo
 			print "Output True"
 			GPIO.output(11, True)
 			time.sleep(1)
-
+```
 
 ### Usando más potencia
 
