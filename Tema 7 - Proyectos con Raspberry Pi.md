@@ -133,5 +133,17 @@ Ahora podremos montarlo con
 
     sudo mount /mnt/miDiscoRed
 
+## Compartir carpetas vía Samba
+
+
+https://tutorials.ubuntu.com/tutorial/install-and-configure-samba#2
+
+### Crear usuarios para samba
+
+
+Podemos autorizar 
+
+https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!
+
 
 
