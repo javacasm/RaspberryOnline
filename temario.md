@@ -9,7 +9,7 @@
 
 ## Esquema del curso
 
-1. [Introducción](./Tema 1 - Qué es Raspberry.md)
+1. [Introducción](./Tema%201%20-%20Qué%20es%20Raspberry.md)
   * Algo de Historia
   * Proyectos donde se usa Raspberry Pi
 2. [Características generales de la placa Raspberry Pi. Hardware](./Tema 2 - Caracteristicas de Raspberry.md)
