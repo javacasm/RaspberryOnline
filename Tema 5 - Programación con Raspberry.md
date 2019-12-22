@@ -295,8 +295,7 @@ Hay que tener cuidado de no llenar el almacenamiento, puesto que este proceso co
 
 ## Python
 
-
-Es un lenguaje moderno de gran productividad, sencillo, potente y con millones de líneas ya desarrolladas que se pueden usar directamente por medio de paquetes instalables
+Es un lenguaje interpretado moderno de gran productividad, sencillo, potente y con millones de líneas ya desarrolladas que se pueden usar directamente por medio de paquetes instalables
 
 Se utiliza en la web, en aplicaciones de escritorio, etc... Gran parte del interface de linux lo utiliza
 
@@ -305,17 +304,28 @@ Por sencillez vamos a usar la sintaxis de la rama 2.x
 
 [Video: Python en Raspberry Pi](https://youtu.be/Yy2oad1Xnoo)
 
-Podemos utilizar la herramienta Idle o python directamente para programar con él.
+Podemos utilizar varias herramientas para programar con python como Idle, Thonny un simple editor de texto o trabajar directamente sobre el intérprete python y directamente programar con él.
 
 ![Herramienta idle](./images/idle.png)
-
-Es más sencillo si escribimos nuestro código en un fichero (con cualquier editor de texto) y luego lo ejecutamos o bien abriéndolo con idle o haciendo:
-
-    python fichero.py
 
 En las últimas versiones se incluye el editor Thonny, que nos permite trabajar con pyhton con facilidad
 
 ![Editor Thonny](./images/Thonny.png)
+
+Podemos trabajar en modo interactivo sin más que ejecutar el intérprete:
+
+```
+~/ $ python3
+>>>
+
+```
+
+Aunque es más sencillo si escribimos nuestro código en un fichero (con cualquier editor de texto) y luego lo ejecutamos o bien abriéndolo con idle, thonny o haciendo:
+
+```
+python3 fichero.py
+```
+
 
 Veamos algunos ejemplos
 
@@ -400,80 +410,82 @@ Veamos un par de sencillos ejemplos sobre cómo utilizar la cámara de python
 
 Empecemos mostrando la previsualización y luego guardando una imagen
 
-		# Ejemplo basico de previsualizacion y captura con la camara
-		# captest_basico_imagen.py
-		# Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
+```python
+# Ejemplo basico de previsualizacion y captura con la camara
+# captest_basico_imagen.py
+# Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
 
-		from picamera import PiCamera
-		from time import sleep
+from picamera import PiCamera
+from time import sleep
 
-		camera = PiCamera()
+camera = PiCamera()
 
-		camera.start_preview() # muestra la previsualizacion
-		sleep(5) # espera 5 segundos
-		camera.capture('/home/pi/Desktop/image.jpg') # guarda la imagen
-		camera.stop_preview() # cierra la previsualizacion
+camera.start_preview() # muestra la previsualizacion
+sleep(5) # espera 5 segundos
+camera.capture('/home/pi/Desktop/image.jpg') # guarda la imagen
+camera.stop_preview() # cierra la previsualizacion
+```
 
 Si lo que queremos es grabar vídeo, el código sería el siguiente
+```python
+from picamera import PiCamera
+from time import sleep
 
-		from picamera import PiCamera
-		from time import sleep
+camera = PiCamera()
 
-		camera = PiCamera()
-
-		camera.start_preview()
-		camera.start_recording('/home/pi/Desktop/video.h264')
-		sleep(5)
-		camera.stop_recording()
-		camera.stop_preview()
-
+camera.start_preview()
+camera.start_recording('/home/pi/Desktop/video.h264')
+sleep(5)
+camera.stop_recording()
+camera.stop_preview()
+```
 Mas detalles en https://projects.raspberrypi.org/en/projects/getting-started-with-picamera
 
 Si entrar en muchos detalles, vamos a ver un sencillo [ejemplo](https://github.com/javacasm/RaspberryOnline/blob/master/codigo/T5_camara.py) de cómo integrar la cámara dentro de nuestro programa python
 
+```python
+import picamera
+import pygame
+import io
 
-		import picamera
-		import pygame
-		import io
+# Init pygame 
+pygame.init()
+screen = pygame.display.set_mode((0,0))
 
-		# Init pygame 
-		pygame.init()
-		screen = pygame.display.set_mode((0,0))
+# Init camera
+camera = picamera.PiCamera()
+camera.resolution = (1280, 720)
+camera.crop = (0.0, 0.0, 1.0, 1.0)
 
-		# Init camera
-		camera = picamera.PiCamera()
-		camera.resolution = (1280, 720)
-		camera.crop = (0.0, 0.0, 1.0, 1.0)
+x = (screen.get_width() - camera.resolution[0]) / 2
+y = (screen.get_height() - camera.resolution[1]) / 2
 
-		x = (screen.get_width() - camera.resolution[0]) / 2
-		y = (screen.get_height() - camera.resolution[1]) / 2
+# Init buffer
+rgb = bytearray(camera.resolution[0] * camera.resolution[1] * 3)
 
-		# Init buffer
-		rgb = bytearray(camera.resolution[0] * camera.resolution[1] * 3)
+# Main loop
+exitFlag = True
+while(exitFlag):
+	for event in pygame.event.get():
+		if(event.type is pygame.MOUSEBUTTONDOWN or 
+		   event.type is pygame.QUIT):
+		    exitFlag = False
 
-		# Main loop
-		exitFlag = True
-		while(exitFlag):
-			for event in pygame.event.get():
-				if(event.type is pygame.MOUSEBUTTONDOWN or 
-				   event.type is pygame.QUIT):
-				    exitFlag = False
+	stream = io.BytesIO()
+	camera.capture(stream, use_video_port=True, format='rgb')
+	stream.seek(0)
+	stream.readinto(rgb)
+	stream.close()
+	img = pygame.image.frombuffer(rgb[0:
+		  (camera.resolution[0] * camera.resolution[1] * 3)],
+		   camera.resolution, 'RGB')
 
-			stream = io.BytesIO()
-			camera.capture(stream, use_video_port=True, format='rgb')
-			stream.seek(0)
-			stream.readinto(rgb)
-			stream.close()
-			img = pygame.image.frombuffer(rgb[0:
-				  (camera.resolution[0] * camera.resolution[1] * 3)],
-				   camera.resolution, 'RGB')
+	screen.fill(0)
+	if img:
+		screen.blit(img, (x,y))
 
-			screen.fill(0)
-			if img:
-				screen.blit(img, (x,y))
+	pygame.display.update()
 
-			pygame.display.update()
-
-		camera.close()
-		pygame.display.quit()
-
+camera.close()
+pygame.display.quit()
+```
