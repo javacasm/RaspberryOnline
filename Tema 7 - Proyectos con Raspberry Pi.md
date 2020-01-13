@@ -71,4 +71,79 @@ TODO: Manejo de clases
 TODO: ofris para congelar usuarios
 
 
-Saludos y no dejes de comentarme como va ese aula
+No dejéis de comentarme como va esas aulas!!
+
+
+## Acceso a servidores de ficheros
+
+Vamos a ver cómo podemos acceder a ficheros compartidos por Samba (el protocolo de compartir ficheros de windows)
+
+Para acceder a los ficheros los montaremos dentro de nuestro sistema de archivos en la carpeta /mnt/miDiscoRed
+
+Instalamos todos los paquetes necesarios
+
+
+    sudo apt-get install  samba-common smbclient samba-common-bin smbclient  cifs-utils
+
+Suponemos que nuestro servidor está en la ip 192.168.1.210 y que para acceder podemos hacerlo con las credenciales miUsuario/miPassword
+
+
+Creamos la carpeta
+
+    sudo mkdir /mnt/miDiscoRed
+
+y para montar la unidad externa hacemos
+
+    sudo mount -t cifs //192.168.1.210/miDiscoRed  /mnt/miDiscoRed/ -o user=miUsuario,pass=miPassword
+
+Si todo va bien, veremos nuestros ficheros remotos la hacer
+
+    ls /mnt/midiscoRed
+
+Ahora vamos a ver como hacerlo para que que se monte de manera más sencilla.
+
+Para ello basta con incluir en el fichero **/etc/fstab** la información de montaje en el formato adecuado. 
+Abrimos el fichero con sudo para tener permisos de escritura
+
+    sudo geany /etc/fstab
+
+Añadimos la siguiente línea al fichero
+
+//192.168.1.210/miDiscoRed  /mnt/miDiscoRed cifs user=miUsuario,pass=miPassword  0  0
+
+Una solución más segura es crea un fichero protegido donde guardar las credenciales
+
+    geany ~/.smbcredentials
+
+y añadimos las líneas
+
+
+    username=miUsuario
+    password=miPassword
+
+Protegemos el fichero de curiosos dándole los permisos necesarios
+
+    chmod 600 ~/.smbcredentials
+
+Y cambiamos la línea de **/etc/fstab** a 
+
+//192.168.1.210/miDiscoRed  /mnt/miDiscoRed cifs credentials=/home/pi/.smbcredentials  0  0
+
+Ahora podremos montarlo con
+
+    sudo mount /mnt/miDiscoRed
+
+## Compartir carpetas vía Samba
+
+
+https://tutorials.ubuntu.com/tutorial/install-and-configure-samba#2
+
+### Crear usuarios para samba
+
+
+Podemos autorizar 
+
+https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!
+
+
+
