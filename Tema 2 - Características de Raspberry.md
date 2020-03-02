@@ -12,9 +12,9 @@ Vemos que tiene un bloque central con la CPU y GPU, un frontal con conectores US
 
 Su tamaño es realmente pequeño: 86x57 mm
 
-A lo largo das distintas versiones ha ido evolucionando. Veamos los dos modelos más recientes
+A lo largo de las distintas versiones ha ido evolucionando. Veamos los dos modelos más recientes
 
-### Raspberry Pi 3 
+### [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 ![Bloques de la Raspberry Pi](./images/Raspberry-Pi-3.jpg)
 
@@ -41,25 +41,25 @@ Veamos las diferencias:
 * Alimentación via USB-C
 
 
-### Raspberry Pi V3+ vs V4
+### [Raspberry Pi V3+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/	) vs V4
 
 ||Raspberry Pi 4	|Raspberry Pi 3 B+
 |---|---|---
 |CPU|Broadcom BCM2711, Quad coreCortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz	|Broadcom BCM2837B0 quad-core A53 (ARMv8) 64-bi @ 1.4GHz
 |GPU|	Broadcom VideoCore VI|	Broadcom Videocore-IV
-|RAM|	1 GB, 2 GB, or 4 GB LPDDR4 SDRAM	|1 GB LPDDR2 SDRAM
+|RAM|	1 GB, 2 GB, o 4 GB LPDDR4 SDRAM	|1 GB LPDDR2 SDRAM
 |Bluetooth|	Bluetooth 5.0, BLE	|Bluetooth 4.2, BLE
-|Display & audio port	|2 × micro-HDMI 2.0, 3.5 mm analogue audio-video jack|	Full size – HDMI, 3.5 mm analogue audio-video jack,
+|Pantalla y sonido	|2 × micro-HDMI 2.0, 3.5 mm audio-vídeo analógico|	HDMI, 3.5 mm audio-vídeo analógico 
 |USB	|2x USB 3.0 + 2x USB 2.0	|4x USB 2.0
 |Ethernet|	Native Gigabit Ethernet	|300 Mbps Giga Ethernet
 |Video Decoder|	H.265 4Kp60, H.264 1080p60|	H.264 & MPEG-4 1080p30
-|Power Supply|	5V via USB type-C up to 3A and GPIO header up to 3A| 5V via micro USB up to2.5A and GPIO header up to 3A
-|Expansion|	40-pin GPIO header|40-pin GPIO header
-|Wifi	|2.4 GHz and 5 GHz 802.11b/g/n/acwireless LAN	|2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN
-|Storage|	microSD card	|microSD card
-|Price	$35 – 1 GB RAM, $45 – 2 GB RAM, $55 – 4 GB RAM	|$35 – 1 GB RAM
+|Aimentación|	5V via USB type-C con 3A y GPIO  a 3A| 5V vía micro USB con 2.5A y GPIO a 3A
+|Expansión|	40-pin GPIO |40-pin GPIO 
+|Wifi	|2.4 GHz y 5 GHz 802.11b/g/n/a wifi LAN	|2.4 GHz and 5 GHz 802.11b/g/n/a wifi LAN
+|Almacenamiento|	microSD card	|microSD card
+|Precio|	$35 – 1 GB RAM, $45 – 2 GB RAM, $55 – 4 GB RAM	|$35 – 1 GB RAM
 
-Cómo podemos ver la V4 gana en todas las características 
+Cómo podemos ver, la V4 gana en todas las características 
 
 [Fuente: seeedstudio](http://www.seeedstudio.com/blog/2019/09/30/raspberry-pi-4-vs-pi-3-all-the-major-differences)
 
@@ -91,15 +91,21 @@ La Raspberry [Zero](https://www.raspberrypi.org/products/pi-zero/) es una versi�
 
 ### Versión antiguas
 
-#### Raspberry Versión B
+#### [Raspberry Pi Versión B](https://www.raspberrypi.org/products/raspberry-pi-1-model-b-plus/)
 Tenía 512M de RAM, ethernet y 2 puertos USB
 
 ![modeloB](./images/ModeloB.jpg)
 
-#### Raspberry Versión A
+#### [Raspberry Versión A](https://www.raspberrypi.org/products/raspberry-pi-1-model-a-plus/)
 Apareció en 2011 y tenía 256MB de RAM, un único USB y no tenía conector Ethernet. Costaba unos 25€
 
 ![Raspberry Versión A](https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Raspberry_Pi_-_Model_A.jpg/220px-Raspberry_Pi_-_Model_A.jpg)
+
+#### [Versión B+](https://www.raspberrypi.org/documentation/hardware/raspberrypi/models/README.md#modelbplus)
+
+
+En 2014 se libera esta versión con algunas mejoras internas, pero sin grandes cambios
+
 
 #### [Versión 2 B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
 
@@ -107,11 +113,9 @@ El micro quad core va a 900MHz  y tiene 1Gb de RAM, 4 puertos USBs. Incorporan e
 
 ![Modelo 2 B](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Raspberry_Pi_2_Model_B_v1.1_top_new.jpg/220px-Raspberry_Pi_2_Model_B_v1.1_top_new.jpg)
 
-#### [Versión B+](https://www.raspberrypi.org/documentation/hardware/raspberrypi/models/README.md#modelbplus)
-
-En 2014 se libera esta versión con algunas mejoras internas, pero sin grandes cambios
-
 [Vídeo](https://youtu.be/ZBq6ZPE5r9c) sobre los distintos modelos/versiones de Raspberry Pi
+
+Más detalles en la [página de productos de la fundación Raspberry Pi](https://www.raspberrypi.org/products/)
 
 ## Raspberry Pi 4
 
@@ -170,27 +174,27 @@ Además algunos de ellos, son treméndamente similares y a un precio sensiblemen
 
 Veamos algunos de ellos:
 
-* BeagleBoard  ARM Cortex-A8 256MB 89€
+* [BeagleBoard](https://beagleboard.org/)  ARM Cortex-A8 256MB 89€
 
   ![beagle](./images/Beagle.png)
 
 
-* OLinuXino  Cortex A8 1GHz  512 MB 55€
+* [OLinuXino](https://www.olimex.com/Products/OLinuXino/open-source-hardware)  Cortex A8 1GHz  512 MB 55€
 
   ![Olixunio](./images/Olinuxino.png)
 
 
-* UDOO=raspberry+arduino
+* [UDOO](https://www.udoo.org/) = raspberry+arduino
 6 ARM Cortex-A9 CPU Dua/Quad core 1GHz
 1GB
 
   ![udoo](./images/UDOO.png)
 
-* Cubieboard ARM cortex-A8 y 512 MB 49$
+* [Cubieboard](http://cubieboard.org/model/) ARM cortex-A8 y 512 MB 49$
 
   ![Cubieboard](./images/Cubbieboard.png)
 
-* Carambola 8devices (32Mb RAM) 22$
+* [Carambola 8devices](https://www.8devices.com/products/carambola) (32Mb RAM) 22$
 
 ![Carambola](./images/carambola.png)
 
