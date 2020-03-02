@@ -382,7 +382,7 @@ Después de ésto se actualizará y estará listo para usarlo
 
 Para añadir las carpetas locales o remotes donde se almacenan los contenidos, entramos en el tipo que queramos (Películas en este ejemplo) y pulsamos sobre "Entrar en la sección de Archivos"
 
-[Añadiendo carpetas de contenidos](./images/KodiAnadiendoCarpetas.jpg)
+![Añadiendo carpetas de contenidos](./images/KodiAnadiendoCarpetas.jpg)
 
 Pulsamos en "Añadir vídeos"
 
