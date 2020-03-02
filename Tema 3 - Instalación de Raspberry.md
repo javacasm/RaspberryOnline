@@ -41,12 +41,11 @@ Por esto, salvo que necesites una gran cantidad de procesamiento o tus aplicacio
 ![Kit Raspberry Pi](http://www.electan.com/product_thumb.php?img=images/RaspberryKit2.jpg)
 
 
-* [Raspberry.org](http://Raspberry.org)
 * [www.inven.es](http://www.inven.es)
 * [www.electan.com](http://www.electan.com)
 * [www.amazon.es](http://www.amazon.es)
 * [www.bricogeek.com](http://www.bricogeek.com)
-* [www.raspipc.com](http://www.raspipc.com)
+* [www.raspipc.es](http://www.raspipc.es)
 
 #### Veamos algunos kits de Inven
 
@@ -99,17 +98,17 @@ Es la versión para Raspberry de Debian (una de las distribuciones de Linux con 
 
 Es una versión de Ubuntu (Linux) para la Raspberry
 
-### [Ubuntu Core](https://developer.ubuntu.com/en/snappy/start/#snappy-raspi2)
+### [Ubuntu Core](https://ubuntu.com/download/raspberry-pi-2-3-core)
 
 Es un Ubuntu (Linux) reducido al mínimo para funcionar en equipos más pequeños optimizado para un mejor rendimiento
 
-### [Ubuntu Server](https://www.ubuntu.com/download/iot/raspberry-pi-2-3)
+### [Ubuntu Server](https://ubuntu.com/download/raspberry-pi)
 
 Para convertir tu Raspberry en un auténtico servidor
 
-### [Windows 10 IOT Core](http://ms-iot.github.io/content/en-US/Downloads.htm)
+### [Windows 10 IOT Core](https://docs.microsoft.com/en-us/windows/iot-core/downloads)
 
-Es una versión reducida de Windows 10
+Es una versión reducida de Windows 10 para las Raspberry Pi 2 y 3, pero en 2020 parece que Microsoft no va a migrar a versiones más modernas de Raspberry Pi
 
 ### [OSMC](https://osmc.tv/download/)
 
@@ -121,7 +120,7 @@ Otra distribución especializada en el entretenimiento y que utiliza el conocido
 
 ![OpenElec](./images/openelec-vs-osmc-ft-500x281.jpg)
 
-### [Chrome OS](https://flintos.io/)
+### [Chrome OS](https://fydeos.com/download/)
 
 Es un port de la parte opensource del sistema operativo Chrome OS de Google para Raspberry
 
@@ -141,8 +140,8 @@ Una vez elegida la imagen vamos a proceder a instalar
 
 ¿Qué necesitamos?
 
-* Formatear tarjeta ([http://www.sdcard.org/downloads/formatter_4/](http://www.sdcard.org/downloads/formatter_4/))
-* Descargamos la imagen del sistema que queramos [http://www.raspberrypi.org/download](http://www.raspberrypi.org/download)
+* Formatear tarjeta ([Formatter4](http://www.sdcard.org/downloads/formatter_4/))
+* Descargamos la imagen del sistema que queramos desde la [página de descargas (Downloads) de la web de Raspberry.org](http://www.raspberrypi.org/downloads)
 * Si usamos una imagen tipo Noobs, basta con que descomprimamos el contenido del fichero zip en la tarjeta SD
 * Si es una imagen (fichero tipo img o iso) lo grabamos por ejempo con la herramienta multiplataforma Etcher (Windows, OsX y Linux) para instalar imagenes https://www.balena.io/etcher/
 
@@ -153,7 +152,7 @@ Una vez elegida la imagen vamos a proceder a instalar
     * Tenemos 2 opciones para descargar la imagen de noobs:
         * Una instalación mínima de noobs, que descargará luego todo lo necesario desde la red
         * Una instalación basde de Noobs que incluye todo lo necesiario para instalar el sistema operativo Raspbian, que es el más usado y que una vez copiado en la tarjeta no necesita conexión a la red	
-	* [Más detalles sobre la instalación de Noobs](https://www.raspberrypi.org/help/noobs-setup/)
+	
 
 	![noobs](./images/noobs.png)
 
